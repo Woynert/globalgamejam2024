@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dafcrsdyetvwn"]
+
+[ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown.tscn" id="1_luuoo"]
+
+[node name="LevelPilot" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(15.9863, 1, 35.7168)
+
+[node name="Clown" parent="." instance=ExtResource("1_luuoo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37252, 0)
+
+[node name="visual" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 0.864643, 0.502386, 0, -0.502386, 0.864643, 0, 6.45311, 8.48724)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 0.462058, 0.88685, 0, -0.88685, 0.462058, 0, 9.75636, 7.73472)
