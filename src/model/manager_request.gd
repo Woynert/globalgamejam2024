@@ -6,7 +6,11 @@ This node is in charge of managing all the logic regarding the public requests
 """
 
 @onready var timer_request = $TimerRequest as Timer
-@onready var timer_public_review = $TimerRequest as Timer
+@onready var timer_public_review = $TimerPublicReview as Timer
+var BOREDOM_RATE = 5
+var LAUGH_TINY = 10
+var LAUGH_MEDIUM = 20
+var LAUGH_LARGE = 30
 
 func _ready():
 	start()
@@ -22,11 +26,13 @@ func _timer_request_timeout():
 	PublicRequest.generate_request()
 	
 func _timer_public_review_timeout():
-	print("")
-	pass
+	GlobalState.set_laugh(GlobalState.laugh - BOREDOM_RATE)
+	print(GlobalState.laugh)
 
 func submit_trick(tricks: Array[int]):
 	print("tricks submitted %s" % tricks)
+	GlobalState.set_laugh(GlobalState.laugh + LAUGH_MEDIUM)
 	
 func submit_failure(trick: int):
 	print("trick failed %d" % trick)
+	

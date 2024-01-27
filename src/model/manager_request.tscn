@@ -9,4 +9,3 @@ script = ExtResource("1_46ue3")
 wait_time = 15.0
 
 [node name="TimerPublicReview" type="Timer" parent="."]
-wait_time = 5.0

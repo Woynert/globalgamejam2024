@@ -10,6 +10,10 @@ func _on_current_request_changed():
 	print("Current request chagnged to %s" % GlobalState.current_request)
 	set_current_reequest(GlobalState.current_request)
 
+func _physics_process(delta):
+	set_value_health(GlobalState.health)
+	set_value_laugh(GlobalState.laugh)
+
 # setters
 
 func set_value_health(value):
