@@ -24,6 +24,7 @@ var walking: bool = false
 var on_floor: bool = false
 var on_rope: bool = false
 var on_monocycle: bool = false
+var doing_hand_trick: bool = false
 
 func _ready():
 	var walk_controller = $"../WalkController" as Node3D
@@ -44,6 +45,7 @@ func _physics_process(delta):
 	on_floor = clown.is_on_floor_shapecast()
 	on_rope = clown.node_rope.enabled
 	on_monocycle = clown.node_monocycle.enabled
+	doing_hand_trick = $"../Hand".doing_hand_trick
 	
 	# apply
 	on_floor = on_floor || on_rope
@@ -60,14 +62,26 @@ func _physics_process(delta):
 	
 	if walking && on_floor:
 		ani_player_low.play(move_animation)
-		ani_player_up.play(move_animation)
-		print(ani_player_up.current_animation)
+		if !doing_hand_trick: ani_player_up.play(move_animation)
 	elif !walking && on_floor:
 		ani_player_low.play("idle")
-		ani_player_up.play("idle")
+		if !doing_hand_trick: ani_player_up.play("idle")
 	elif (walking && !on_floor || !walking && !on_floor):
 		ani_player_low.play("jump")
-		ani_player_up.play("jump")
+		if !doing_hand_trick: ani_player_up.play("jump")
+		
+	print(ani_player_low.current_animation, " : ", ani_player_up.current_animation)
+	if doing_hand_trick:
+		sprite_up.position.z = -0.1
+		match ani_player_low.current_animation:
+			"idle":
+				ani_player_up.play("idle_jiggle")
+			"walk", "jump":
+				ani_player_up.play("walk_jiggle")
+			"monocycle":
+				ani_player_up.play("monocycle_jiggle")
+	else:
+		sprite_up.position.z = 0.1
 
 func update_animation ():
 	pass

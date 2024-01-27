@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=62 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
@@ -27,11 +27,23 @@
 [ext_resource type="Texture2D" uid="uid://cyaay33leehgj" path="res://resource_remote/Plin walk Brazos 01.png" id="18_akg5m"]
 [ext_resource type="Texture2D" uid="uid://beg62iteyfj8k" path="res://resource_remote/Plin walk Brazos 02.png" id="19_abk3e"]
 [ext_resource type="Texture2D" uid="uid://dy3pcdes6byxx" path="res://resource_remote/Plin walk Brazos 03.png" id="20_25g4c"]
+[ext_resource type="Texture2D" uid="uid://dixbm3ubyb1xy" path="res://resource_remote/Plin Idle Brazos Jiggle 01.png" id="20_ipliw"]
 [ext_resource type="Texture2D" uid="uid://cp8p5lo8m2u04" path="res://resource_remote/Plin monociclo Brazos 01.png" id="21_dgere"]
+[ext_resource type="Texture2D" uid="uid://cnmpsxjsrl5c2" path="res://resource_remote/Plin Idle Brazos Jiggle 02.png" id="21_jup2t"]
 [ext_resource type="Texture2D" uid="uid://dbgc5gh5pcftl" path="res://resource_remote/Plin walk Brazos 04.png" id="21_m7h2r"]
 [ext_resource type="Texture2D" uid="uid://b0rxjc0i7tfe6" path="res://resource_remote/Plin monociclo Brazos 02.png" id="22_ccq6x"]
+[ext_resource type="Texture2D" uid="uid://b0k2tlc4dx3py" path="res://resource_remote/Plin Idle Brazos Jiggle 03.png" id="22_d7pcw"]
 [ext_resource type="Texture2D" uid="uid://bp7fjigpaph67" path="res://resource_remote/Plin monociclo Brazos 03.png" id="23_ahfgi"]
+[ext_resource type="Texture2D" uid="uid://bmfqylyrugre0" path="res://resource_remote/Plin Idle Brazos Jiggle 04.png" id="23_ii4s0"]
 [ext_resource type="Texture2D" uid="uid://0o8vb64imf47" path="res://resource_remote/Plin monociclo Brazos 04.png" id="24_33j0c"]
+[ext_resource type="Texture2D" uid="uid://c5872ankmn7db" path="res://resource_remote/Plin monociclo Brazos Jiggle 01.png" id="29_f4sef"]
+[ext_resource type="Texture2D" uid="uid://dn24h1edjy5gc" path="res://resource_remote/Plin monociclo Brazos Jiggle 02.png" id="30_42nea"]
+[ext_resource type="Texture2D" uid="uid://d2auvphmrnnoh" path="res://resource_remote/Plin monociclo Brazos Jiggle 03.png" id="31_3ihfp"]
+[ext_resource type="Texture2D" uid="uid://qqim4sxh6mcj" path="res://resource_remote/Plin monociclo Brazos Jiggle 04.png" id="32_shbjp"]
+[ext_resource type="Texture2D" uid="uid://d4jyn784ii4cx" path="res://resource_remote/Plin walk Brazos Jiggle 01.png" id="32_tmirv"]
+[ext_resource type="Texture2D" uid="uid://caqu4ajdcw67f" path="res://resource_remote/Plin walk Brazos Jiggle 02.png" id="33_8iyug"]
+[ext_resource type="Texture2D" uid="uid://clijm2g64xrgu" path="res://resource_remote/Plin walk Brazos Jiggle 03.png" id="34_gw0tt"]
+[ext_resource type="Texture2D" uid="uid://dkhymsta5pdhj" path="res://resource_remote/Plin walk Brazos Jiggle 04.png" id="35_6gyhw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0ywa"]
 radius = 0.47
@@ -190,6 +202,34 @@ tracks/1/keys = {
 "values": ["idle"]
 }
 
+[sub_resource type="Animation" id="Animation_fy05y"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/SpriteUpper:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites/SpriteUpper:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle_jiggle"]
+}
+
 [sub_resource type="Animation" id="Animation_pol3i"]
 length = 0.2
 loop_mode = 1
@@ -246,6 +286,34 @@ tracks/1/keys = {
 "values": ["monocycle"]
 }
 
+[sub_resource type="Animation" id="Animation_tms7x"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/SpriteUpper:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites/SpriteUpper:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["monocycle_jiggle"]
+}
+
 [sub_resource type="Animation" id="Animation_1oouf"]
 resource_name = "walk"
 length = 0.8
@@ -275,12 +343,43 @@ tracks/1/keys = {
 "values": ["walk"]
 }
 
+[sub_resource type="Animation" id="Animation_0al2w"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/SpriteUpper:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites/SpriteUpper:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["walk_jiggle"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gjfrl"]
 _data = {
 "idle": SubResource("Animation_oy7pm"),
+"idle_jiggle": SubResource("Animation_fy05y"),
 "jump": SubResource("Animation_pol3i"),
 "monocycle": SubResource("Animation_yv5kq"),
-"walk": SubResource("Animation_1oouf")
+"monocycle_jiggle": SubResource("Animation_tms7x"),
+"walk": SubResource("Animation_1oouf"),
+"walk_jiggle": SubResource("Animation_0al2w")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ns3t"]
@@ -366,6 +465,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_ipliw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jup2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_d7pcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ii4s0")
+}],
+"loop": true,
+"name": &"idle_jiggle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("18_akg5m")
 }],
 "loop": true,
@@ -391,6 +507,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("29_f4sef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_42nea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3ihfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_shbjp")
+}],
+"loop": true,
+"name": &"monocycle_jiggle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("18_akg5m")
 }, {
 "duration": 1.0,
@@ -404,6 +537,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_tmirv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8iyug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gw0tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6gyhw")
+}],
+"loop": true,
+"name": &"walk_jiggle",
 "speed": 5.0
 }]
 
@@ -462,7 +612,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97981, 0)
 flip_h = true
 sprite_frames = SubResource("SpriteFrames_0ns3t")
 animation = &"idle"
-frame_progress = 0.0420943
+frame_progress = 0.250282
 
 [node name="SpriteUpper" type="AnimatedSprite3D" parent="Visual/sprites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97981, 0.1)
@@ -474,7 +624,7 @@ animation = &"idle"
 script = ExtResource("2_s7awb")
 
 [node name="HandTrickLimitUp" type="Marker3D" parent="Hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83305, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05238, 0)
 
 [node name="HandTrickLimitDown" type="Marker3D" parent="Hand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22308, 0)

@@ -62,7 +62,7 @@ func start_hand_trick():
 	print("Starting hand trick")
 	hand_trick_usable = false
 	hand_trick_item = hand_trick_item_scene.instantiate() as HandTrickItem
-	hand_trick_item.setup(hand_trick_limit_down.position.y + 0.1)
+	hand_trick_item.setup(hand_trick_limit_down.position.y + 0.1, item)
 	self.add_child(hand_trick_item)
 	
 func stop_hand_trick():
