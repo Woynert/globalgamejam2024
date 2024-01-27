@@ -4,6 +4,7 @@ class_name UiGame
 func _ready():
 	GlobalState.signal_request_changed.connect(_on_current_request_changed)
 	_on_current_request_changed()
+	update_day()
 
 # signals
 
@@ -38,3 +39,6 @@ func set_current_reequest(request: Array[int]):
 	
 func update_timeleft ():
 	$LabelTime.text = str(int(SharedRes.get_manager_level().level_timer.time_left))
+
+func update_day ():
+	$LabelDay.text = "Day %d" % GlobalState.day

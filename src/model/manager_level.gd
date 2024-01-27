@@ -34,4 +34,3 @@ func timer_pause ():
 func timer_start ():
 	level_timer.paused = false
 	level_timer.start(level_timer.wait_time)
-
