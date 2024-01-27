@@ -1,13 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dafcrsdyetvwn"]
+[gd_scene load_steps=13 format=3 uid="uid://dafcrsdyetvwn"]
 
 [ext_resource type="Script" path="res://src/level/level_pilot.gd" id="1_8mpsg"]
 [ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown/clown.tscn" id="1_luuoo"]
 [ext_resource type="PackedScene" uid="uid://byvu4kyjt73vr" path="res://src/entities/props/baston/baston.tscn" id="2_lumbh"]
 [ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_wbld2"]
 [ext_resource type="Script" path="res://src/util/debug_keys.gd" id="4_ddw3g"]
-[ext_resource type="PackedScene" uid="uid://fh0m831ncgvv" path="res://src/ui/ui_public.tscn" id="5_v02bj"]
 [ext_resource type="PackedScene" uid="uid://c34w8f8vwefhc" path="res://src/entities/elevator/elevator.tscn" id="6_5ka5h"]
-[ext_resource type="PackedScene" uid="uid://celvba4tj13tj" path="res://src/ui/ui_game.tscn" id="6_554uk"]
 [ext_resource type="PackedScene" uid="uid://dnaoqvp2rx64l" path="res://src/entities/rope/Rope.tscn" id="7_ve0q6"]
 [ext_resource type="PackedScene" uid="uid://d2bm8hq0enmaw" path="res://src/entities/cake/cake.tscn" id="8_6ejyo"]
 [ext_resource type="Script" path="res://src/entities/cake/cake_play_area.gd" id="9_6463n"]
@@ -159,8 +157,3 @@ size = Vector3(3.76099, 0.970398, 0.427216)
 [node name="CSGBox3D3" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04698, 0.363411, 3.01322)
 size = Vector3(3.49255, 0.970398, 0.427216)
-
-[node name="UiPublic" parent="." instance=ExtResource("5_v02bj")]
-
-[node name="UiGame" parent="UiPublic" instance=ExtResource("6_554uk")]
-layout_mode = 1

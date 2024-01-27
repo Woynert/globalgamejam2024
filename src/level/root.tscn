@@ -1,14 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcdqm3lsb2brs"]
+[gd_scene load_steps=6 format=3 uid="uid://bcdqm3lsb2brs"]
 
 [ext_resource type="Script" path="res://src/level/root.gd" id="1_7rjcc"]
+[ext_resource type="Script" path="res://src/model/manager_level.gd" id="2_xdbrb"]
+[ext_resource type="Script" path="res://src/util/debug_keys.gd" id="3_3tsrq"]
+[ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_eq0lf"]
+[ext_resource type="Script" path="res://src/model/manager_ui.gd" id="4_hmnwa"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_7rjcc")
 
-[node name="Level" type="Node3D" parent="."]
+[node name="DebugKeys" type="Node" parent="."]
+script = ExtResource("3_3tsrq")
 
-[node name="Menus" type="Control" parent="."]
+[node name="ManagerRequest" parent="." instance=ExtResource("3_eq0lf")]
+
+[node name="ManagerLevel" type="Node3D" parent="."]
+script = ExtResource("2_xdbrb")
+
+[node name="ManagerUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("4_hmnwa")
