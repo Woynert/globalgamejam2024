@@ -9,5 +9,4 @@ func _physics_process(delta):
 		node_monocycle.move(self, delta)
 	else:
 		node_walk_controller.move(self, delta)
-	
-	
+	move_and_slide()

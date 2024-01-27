@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dafcrsdyetvwn"]
+[gd_scene load_steps=9 format=3 uid="uid://dafcrsdyetvwn"]
 
 [ext_resource type="Script" path="res://src/level/root.gd" id="1_8mpsg"]
 [ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown/clown.tscn" id="1_luuoo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_wbld2"]
 [ext_resource type="Script" path="res://src/util/debug_keys.gd" id="4_ddw3g"]
 [ext_resource type="PackedScene" uid="uid://fh0m831ncgvv" path="res://src/ui/ui_public.tscn" id="5_v02bj"]
+[ext_resource type="PackedScene" uid="uid://c34w8f8vwefhc" path="res://src/entities/elevator/elevator.tscn" id="6_5ka5h"]
 [ext_resource type="PackedScene" uid="uid://celvba4tj13tj" path="res://src/ui/ui_game.tscn" id="6_554uk"]
 
 [node name="LevelPilot" type="Node3D"]
@@ -39,6 +40,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7476, 9.53674e-07, -8.140
 radius = 9.419
 sides = 33
 
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8652, 2.82897, -7.3261)
+size = Vector3(0.948609, 4.10892, 1.80099)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6889, 2.82897, -7.3261)
+size = Vector3(0.948609, 4.10892, 1.80099)
+
 [node name="visual" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="visual"]
@@ -67,6 +76,15 @@ item = 2
 [node name="Baston4" parent="entities" instance=ExtResource("2_lumbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67471, -2.86102e-06, 1.28275)
 item = 3
+
+[node name="Node3D" type="Node3D" parent="entities"]
+
+[node name="Elevator" parent="entities" node_paths=PackedStringArray("node_limit") instance=ExtResource("6_5ka5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4358, -0.00217217, -7.23968)
+node_limit = NodePath("../MarkerElevator")
+
+[node name="MarkerElevator" type="Marker3D" parent="entities"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.26465, 3.88341, -8.46038)
 
 [node name="UiPublic" parent="." instance=ExtResource("5_v02bj")]
 

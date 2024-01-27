@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=14 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://b8pmg2cgts5mx" path="res://resource_remote/Plin base.png" id="4_asixb"]
 [ext_resource type="Script" path="res://src/entities/clown/monocycle.gd" id="6_b8eki"]
 [ext_resource type="Script" path="res://src/entities/clown/walk_controller.gd" id="7_akx8q"]
+[ext_resource type="Script" path="res://src/entities/clown/rope.gd" id="8_oufqt"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ym1wy"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0ywa"]
+radius = 0.47
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t1t02"]
 radius = 0.852821
@@ -29,7 +31,7 @@ script = ExtResource("1_wnvl0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CylinderShape3D_ym1wy")
+shape = SubResource("CapsuleShape3D_m0ywa")
 
 [node name="AreaReach" type="Area3D" parent="." node_paths=PackedStringArray("text_billiboard", "hand")]
 collision_layer = 0
@@ -81,3 +83,6 @@ target_position = Vector3(0, 1, 0)
 
 [node name="TimerMonocycle" type="Timer" parent="Monocycle"]
 wait_time = 3.0
+
+[node name="Rope" type="Node3D" parent="."]
+script = ExtResource("8_oufqt")

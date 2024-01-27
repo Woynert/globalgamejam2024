@@ -22,4 +22,3 @@ func move(node: CharacterBody3D, delta: float):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	node.velocity = velocity
-	node.move_and_slide()
