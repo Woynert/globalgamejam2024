@@ -63,7 +63,7 @@ transform = Transform3D(1, 0, 0, 0, 0.462058, 0.88685, 0, -0.88685, 0.462058, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37252, 0)
 
 [node name="Camera3D" type="Camera3D" parent="entities/Clown"]
-transform = Transform3D(1, 0, 0, 0, 0.694081, 0.719897, 0, -0.719897, 0.694081, 0, 11.369, 10.516)
+transform = Transform3D(0.868433, 0.35693, -0.34413, 2.17478e-11, 0.694081, 0.719897, 0.495807, -0.625182, 0.602763, -4.27928, 11.369, 9.82085)
 fov = 28.9
 
 [node name="Baston" parent="entities" instance=ExtResource("2_lumbh")]
