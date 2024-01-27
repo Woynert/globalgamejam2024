@@ -1,18 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dafcrsdyetvwn"]
+[gd_scene load_steps=8 format=3 uid="uid://dafcrsdyetvwn"]
 
+[ext_resource type="Script" path="res://src/level/root.gd" id="1_8mpsg"]
 [ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown/clown.tscn" id="1_luuoo"]
 [ext_resource type="PackedScene" uid="uid://byvu4kyjt73vr" path="res://src/entities/props/baston/baston.tscn" id="2_lumbh"]
-[ext_resource type="PackedScene" uid="uid://u1v4mdxwbio1" path="res://src/entities/clown/hand_trick_item.tscn" id="3_g5i8o"]
+[ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_wbld2"]
 [ext_resource type="Script" path="res://src/util/debug_keys.gd" id="4_ddw3g"]
+[ext_resource type="PackedScene" uid="uid://fh0m831ncgvv" path="res://src/ui/ui_public.tscn" id="5_v02bj"]
+[ext_resource type="PackedScene" uid="uid://celvba4tj13tj" path="res://src/ui/ui_game.tscn" id="6_554uk"]
 
 [node name="LevelPilot" type="Node3D"]
+script = ExtResource("1_8mpsg")
+
+[node name="DebugKeysNode" type="Node" parent="."]
+script = ExtResource("4_ddw3g")
+
+[node name="ManagerRequest" parent="." instance=ExtResource("3_wbld2")]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
+visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.542638, 0)
 size = Vector3(15.9863, 1, 35.7168)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.43709)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D2"]
+radius = 6.81658
+sides = 33
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7476, 9.53674e-07, -8.14064)
+radius = 9.419
+sides = 33
 
 [node name="visual" type="Node3D" parent="."]
 
@@ -25,17 +50,17 @@ transform = Transform3D(1, 0, 0, 0, 0.462058, 0.88685, 0, -0.88685, 0.462058, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37252, 0)
 
 [node name="Camera3D" type="Camera3D" parent="entities/Clown"]
-transform = Transform3D(1, 0, 0, 0, 0.864643, 0.502386, 0, -0.502386, 0.864643, 0, 5.08059, 8.48724)
+transform = Transform3D(1, 0, 0, 0, 0.694081, 0.719897, 0, -0.719897, 0.694081, 0, 11.369, 10.516)
+fov = 28.9
 
 [node name="Baston" parent="entities" instance=ExtResource("2_lumbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14314, 0, -9.43106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32918, -4.76837e-07, -2.71673)
 
 [node name="Baston2" parent="entities" instance=ExtResource("2_lumbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26073, 0, -8.50112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44677, -4.76837e-07, -1.78679)
 item = 1
 
-[node name="HandTrickItem" parent="entities" instance=ExtResource("3_g5i8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8489, 2.5877, -3.7364)
+[node name="UiPublic" parent="." instance=ExtResource("5_v02bj")]
 
-[node name="debug_keys_node" type="Node" parent="."]
-script = ExtResource("4_ddw3g")
+[node name="UiGame" parent="UiPublic" instance=ExtResource("6_554uk")]
+layout_mode = 1

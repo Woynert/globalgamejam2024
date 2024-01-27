@@ -1,0 +1,16 @@
+extends Node
+class_name TRICKS
+
+enum VAR {
+	JUGGLE_BASTON,
+	JUGGLE_ANTORCHA,
+	JUGGLE_CUCHILLO,
+	MONOCYCLE
+}
+
+const NAMES = {
+	VAR.JUGGLE_BASTON: "Baston",
+	VAR.JUGGLE_ANTORCHA: "Antorcha",
+	VAR.JUGGLE_CUCHILLO: "Cuchillo",
+	VAR.MONOCYCLE: "Monocyclo",
+}

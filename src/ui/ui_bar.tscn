@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu633fka3un4w"]
+
+[ext_resource type="Script" path="res://src/ui/ui_bar.gd" id="1_o4rvi"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 214.0
+offset_bottom = 27.0
+script = ExtResource("1_o4rvi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+text = "test"
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0

@@ -1,16 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=12 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
 [ext_resource type="Script" path="res://src/entities/clown/hand.gd" id="2_s7awb"]
 [ext_resource type="Texture2D" uid="uid://2wra247lc2cs" path="res://icon.svg" id="3_geb4x"]
+[ext_resource type="Texture2D" uid="uid://b8pmg2cgts5mx" path="res://resource_remote/Plin base.png" id="4_asixb"]
+[ext_resource type="Script" path="res://src/entities/clown/monocycle.gd" id="6_b8eki"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ym1wy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t1t02"]
 radius = 1.59415
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhmfn"]
+albedo_texture = ExtResource("4_asixb")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_els2e"]
+transparency = 1
 albedo_texture = ExtResource("3_geb4x")
 
 [sub_resource type="QuadMesh" id="QuadMesh_vmova"]
@@ -34,6 +40,21 @@ hand = NodePath("../Hand")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaReach"]
 shape = SubResource("SphereShape3D_t1t02")
 
+[node name="TextBilliboard" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3601, 0)
+pixel_size = 0.002
+billboard = 1
+no_depth_test = true
+fixed_size = true
+text = "Text (testing)"
+
+[node name="visual" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(1.4379, 0, 0, 0, 1.35313, 0.486409, 0, -0.486409, 1.35313, 0, 0.639109, 0)
+material_override = SubResource("StandardMaterial3D_fhmfn")
+mesh = SubResource("QuadMesh_vmova")
+
 [node name="Hand" type="Node3D" parent="."]
 script = ExtResource("2_s7awb")
 
@@ -43,16 +64,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83305, 0)
 [node name="HandTrickLimitDown" type="Marker3D" parent="Hand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22308, 0)
 
-[node name="visual" type="Node3D" parent="."]
+[node name="monocycle" type="Node3D" parent="."]
+script = ExtResource("6_b8eki")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
-transform = Transform3D(1, 0, 0, 0, 1.80406, 0, 0, 0, 1, 0, 0.940252, 0)
-mesh = SubResource("QuadMesh_vmova")
+[node name="RayCast3D" type="RayCast3D" parent="monocycle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
+target_position = Vector3(0, 1, 0)
 
-[node name="TextBilliboard" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3601, 0)
-pixel_size = 0.002
-billboard = 1
-no_depth_test = true
-fixed_size = true
-text = "Text (testing)"
+[node name="RayCast3D2" type="RayCast3D" parent="monocycle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
+target_position = Vector3(0, 1, 0)

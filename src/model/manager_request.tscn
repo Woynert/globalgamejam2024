@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://525ql3kbqbmw"]
+
+[ext_resource type="Script" path="res://src/model/manager_request.gd" id="1_46ue3"]
+
+[node name="ManagerRequest" type="Node"]
+script = ExtResource("1_46ue3")
+
+[node name="TimerRequest" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="TimerPublicReview" type="Timer" parent="."]
+wait_time = 5.0

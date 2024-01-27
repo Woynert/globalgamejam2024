@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://celvba4tj13tj"]
+
+[ext_resource type="PackedScene" uid="uid://cu633fka3un4w" path="res://src/ui/ui_bar.tscn" id="1_njhxn"]
+[ext_resource type="Script" path="res://src/ui/ui_game.gd" id="1_wv4ge"]
+
+[node name="UiGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wv4ge")
+
+[node name="UiBarHealth" parent="." instance=ExtResource("1_njhxn")]
+layout_mode = 1
+offset_left = 583.0
+offset_top = 12.0
+offset_right = 781.0
+offset_bottom = 39.0
+label_text = "health"
+
+[node name="UiBarLaugh" parent="." instance=ExtResource("1_njhxn")]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 46.0
+offset_right = 781.0
+offset_bottom = 73.0
+label_text = "laugh"
+
+[node name="LabelMoney" type="Label" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 83.0
+offset_right = 665.0
+offset_bottom = 106.0
+text = "Money: 10"
+
+[node name="LabelExperience" type="Label" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 109.0
+offset_right = 640.0
+offset_bottom = 132.0
+text = "Exp: 10"
+
+[node name="LabelRequest" type="Label" parent="."]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 135.0
+offset_right = 641.0
+offset_bottom = 158.0
+text = "Request: 1, 2"

@@ -4,7 +4,7 @@ class_name ITEMS
 enum VAR {
 	BASTON,
 	ANTORCHA, 
-	CUCHILLO
+	CUCHILLO,
 }
 
 const NAMES = {

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/entities/props/prop.gd" id="1_japve"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d2ef7"]
-radius = 0.687697
+radius = 0.486525
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq5jb"]
 albedo_texture = ExtResource("1_d2gan")

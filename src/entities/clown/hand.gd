@@ -26,8 +26,6 @@ func is_action_hand_trick_pressed() -> bool:
 			action_pressed = Input.is_action_just_pressed("game_hand_trick_a")
 		true:
 			action_pressed = Input.is_action_just_pressed("game_hand_trick_b")
-	if action_pressed:
-		hand_trick_phase = !hand_trick_phase
 	return action_pressed
 
 func _physics_process(delta):
@@ -35,6 +33,7 @@ func _physics_process(delta):
 		if is_action_hand_trick_pressed() && has_item:
 			doing_hand_trick = true
 			start_hand_trick()
+			hand_trick_phase = !hand_trick_phase
 	else:
 		if !hand_trick_item:
 			return
@@ -42,11 +41,11 @@ func _physics_process(delta):
 		if (hand_trick_item.position.y < hand_trick_limit_up.position.y &&
 			hand_trick_item.position.y > hand_trick_limit_down.position.y &&
 			hand_trick_usable):
-			print("in range")
 			
 			if (is_action_hand_trick_pressed()):
 				print("launch")
 				hand_trick_item.launch()
+				hand_trick_phase = !hand_trick_phase
 				hand_trick_usable = false
 			
 		# let it be usable
@@ -71,4 +70,3 @@ func stop_hand_trick():
 	print("Stopping hand trick")
 	if is_instance_valid(hand_trick_item):
 		(hand_trick_item as Node3D).queue_free()
-	

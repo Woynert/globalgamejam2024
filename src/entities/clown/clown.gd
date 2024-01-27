@@ -30,9 +30,3 @@ func _physics_process(delta):
 func pick_item (item: ITEMS.VAR):
 	# TODO: drop current item
 	hand_node.set_item(item)
-
-#func _ready():
-#	area_reach.body_entered.connect()
-	
-
-	

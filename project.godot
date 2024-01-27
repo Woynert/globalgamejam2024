@@ -15,6 +15,11 @@ run/main_scene="res://src/level/level_pilot.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalState="*res://src/model/global_state.gd"
+SharedRes="*res://src/model/shared_res.gd"
+
 [display]
 
 window/size/viewport_width=800
