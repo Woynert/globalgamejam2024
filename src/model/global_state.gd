@@ -14,11 +14,12 @@ func reset():
 	experience = 0
 	health = 100
 	laugh = 50
-	current_request = []
+	set_current_request([])
 
 func set_current_request(request: Array[int]):
 	current_request = request
 	signal_request_changed.emit()
+	print("current_request %s" % current_request)
 
 func set_laugh(p_laugh: int):
 	laugh = p_laugh

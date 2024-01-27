@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=13 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2wra247lc2cs" path="res://icon.svg" id="3_geb4x"]
 [ext_resource type="Texture2D" uid="uid://b8pmg2cgts5mx" path="res://resource_remote/Plin base.png" id="4_asixb"]
 [ext_resource type="Script" path="res://src/entities/clown/monocycle.gd" id="6_b8eki"]
+[ext_resource type="Script" path="res://src/entities/clown/walk_controller.gd" id="7_akx8q"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ym1wy"]
 
@@ -64,13 +65,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83305, 0)
 [node name="HandTrickLimitDown" type="Marker3D" parent="Hand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22308, 0)
 
-[node name="monocycle" type="Node3D" parent="."]
+[node name="WalkController" type="Node3D" parent="."]
+script = ExtResource("7_akx8q")
+
+[node name="Monocycle" type="Node3D" parent="."]
 script = ExtResource("6_b8eki")
 
-[node name="RayCast3D" type="RayCast3D" parent="monocycle"]
+[node name="RayCast3D" type="RayCast3D" parent="Monocycle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
 target_position = Vector3(0, 1, 0)
 
-[node name="RayCast3D2" type="RayCast3D" parent="monocycle"]
+[node name="RayCast3D2" type="RayCast3D" parent="Monocycle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
 target_position = Vector3(0, 1, 0)
+
+[node name="TimerMonocycle" type="Timer" parent="Monocycle"]
+wait_time = 3.0

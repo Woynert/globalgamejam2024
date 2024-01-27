@@ -16,7 +16,6 @@ func _ready():
 	start()
 
 func start():
-	PublicRequest.generate_request()
 	timer_request.timeout.connect(_timer_request_timeout)
 	timer_request.start()
 	timer_public_review.timeout.connect(_timer_public_review_timeout)
@@ -28,9 +27,15 @@ func _timer_request_timeout():
 func _timer_public_review_timeout():
 	GlobalState.set_laugh(GlobalState.laugh - BOREDOM_RATE)
 
-func submit_trick(tricks: Array[int]):
-	print("tricks submitted %s" % tricks)
-	GlobalState.set_laugh(GlobalState.laugh + LAUGH_MEDIUM)
+func submit_trick(trick: int):
+	print("tricks submitted %s" % trick)
+	
+	print("GlobalState.current_request ", GlobalState.current_request)
+	var satisfaction: float = 1.0 / GlobalState.current_request.size()
+	if not trick in GlobalState.current_request:
+		satisfaction *= 0.4
+	print(satisfaction)
+	GlobalState.set_laugh(GlobalState.laugh + satisfaction * LAUGH_MEDIUM)
 	
 func submit_failure(trick: int):
 	print("trick failed %d" % trick)

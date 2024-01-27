@@ -16,7 +16,5 @@ static func generate_request ():
 	var request: Array[int] = []
 	for r in request_pick:
 		request.append(r)
-	print(request)
-	print(request is Array[int])
 	GlobalState.set_current_request(request)
 

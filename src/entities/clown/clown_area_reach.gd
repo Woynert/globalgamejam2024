@@ -4,6 +4,8 @@ var there_is_reachable_item: bool = false
 var item_in_reach: TRICKS.VAR = 0
 @export var text_billiboard: Label3D
 @export var hand: Hand
+#@onready var clown: Clown = get_parent()
+@onready var monocycle = $"../Monocycle"
 
 func _ready():
 	body_entered.connect(_area_body_entered)
@@ -29,3 +31,6 @@ func _physics_process(delta):
 			if item_in_reach in TRICKS.HANDEABLE:
 				print("Selected " + str(TRICKS.NAMES[item_in_reach]))
 				hand.set_item(item_in_reach)
+			elif item_in_reach == TRICKS.VAR.MONOCYCLE:
+				monocycle.enabled = true
+				

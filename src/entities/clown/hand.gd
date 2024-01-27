@@ -48,7 +48,7 @@ func _physics_process(delta):
 				hand_trick_phase = !hand_trick_phase
 				hand_trick_usable = false
 				var manager_request = SharedRes.manager_request as ManagerRequest
-				manager_request.submit_trick([item])
+				manager_request.submit_trick(item)
 			
 		# let it be usable
 		if hand_trick_item.position.y > hand_trick_limit_up.position.y +2:

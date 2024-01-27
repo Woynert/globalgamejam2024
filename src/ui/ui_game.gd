@@ -3,6 +3,7 @@ class_name UiGame
 
 func _ready():
 	GlobalState.signal_request_changed.connect(_on_current_request_changed)
+	_on_current_request_changed()
 
 # signals
 
