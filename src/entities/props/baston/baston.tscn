@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://byvu4kyjt73vr"]
+
+[ext_resource type="Texture2D" uid="uid://2wra247lc2cs" path="res://icon.svg" id="1_d2gan"]
+[ext_resource type="Script" path="res://src/entities/props/prop.gd" id="1_japve"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d2ef7"]
+radius = 0.687697
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq5jb"]
+albedo_texture = ExtResource("1_d2gan")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xilcq"]
+material = SubResource("StandardMaterial3D_dq5jb")
+
+[node name="Baston" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_japve")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_d2ef7")
+
+[node name="visual" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504366, 0)
+mesh = SubResource("QuadMesh_xilcq")

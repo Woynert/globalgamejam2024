@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://u1v4mdxwbio1"]
+
+[ext_resource type="Script" path="res://src/entities/clown/hand_trick_item.gd" id="1_3sfvl"]
+[ext_resource type="Texture2D" uid="uid://2wra247lc2cs" path="res://icon.svg" id="1_8xnif"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r0v5x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1w5jn"]
+albedo_texture = ExtResource("1_8xnif")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ruygk"]
+material = SubResource("StandardMaterial3D_1w5jn")
+
+[node name="HandTrickItem" type="Area3D"]
+script = ExtResource("1_3sfvl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_r0v5x")
+
+[node name="visual" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
+mesh = SubResource("QuadMesh_ruygk")

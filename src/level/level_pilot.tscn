@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dafcrsdyetvwn"]
+[gd_scene load_steps=5 format=3 uid="uid://dafcrsdyetvwn"]
 
-[ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown.tscn" id="1_luuoo"]
+[ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown/clown.tscn" id="1_luuoo"]
+[ext_resource type="PackedScene" uid="uid://byvu4kyjt73vr" path="res://src/entities/props/baston/baston.tscn" id="2_lumbh"]
+[ext_resource type="PackedScene" uid="uid://u1v4mdxwbio1" path="res://src/entities/clown/hand_trick_item.tscn" id="3_g5i8o"]
+[ext_resource type="Script" path="res://src/util/debug_keys.gd" id="4_ddw3g"]
 
 [node name="LevelPilot" type="Node3D"]
 
@@ -8,15 +11,31 @@
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.542638, 0)
 size = Vector3(15.9863, 1, 35.7168)
-
-[node name="Clown" parent="." instance=ExtResource("1_luuoo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37252, 0)
 
 [node name="visual" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="visual"]
-transform = Transform3D(1, 0, 0, 0, 0.864643, 0.502386, 0, -0.502386, 0.864643, 0, 6.45311, 8.48724)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="visual"]
 transform = Transform3D(1, 0, 0, 0, 0.462058, 0.88685, 0, -0.88685, 0.462058, 0, 9.75636, 7.73472)
+
+[node name="entities" type="Node3D" parent="."]
+
+[node name="Clown" parent="entities" instance=ExtResource("1_luuoo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37252, 0)
+
+[node name="Camera3D" type="Camera3D" parent="entities/Clown"]
+transform = Transform3D(1, 0, 0, 0, 0.864643, 0.502386, 0, -0.502386, 0.864643, 0, 5.08059, 8.48724)
+
+[node name="Baston" parent="entities" instance=ExtResource("2_lumbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14314, 0, -9.43106)
+
+[node name="Baston2" parent="entities" instance=ExtResource("2_lumbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26073, 0, -8.50112)
+item = 1
+
+[node name="HandTrickItem" parent="entities" instance=ExtResource("3_g5i8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8489, 2.5877, -3.7364)
+
+[node name="debug_keys_node" type="Node" parent="."]
+script = ExtResource("4_ddw3g")
