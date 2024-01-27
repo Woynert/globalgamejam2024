@@ -31,6 +31,7 @@ func submit_trick(trick: int):
 		satisfaction *= 0.4
 	print(satisfaction)
 	GlobalState.set_laugh(GlobalState.laugh + satisfaction * LAUGH_VALUE)
+	print("trick submitted %d" % trick)
 	
 func submit_failure(trick: int):
 	print("trick failed %d" % trick)

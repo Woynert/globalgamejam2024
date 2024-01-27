@@ -79,6 +79,9 @@ script = ExtResource("7_akx8q")
 [node name="Monocycle" type="Node3D" parent="."]
 script = ExtResource("6_b8eki")
 
+[node name="TimerMonocycle" type="Timer" parent="Monocycle"]
+wait_time = 3.0
+
 [node name="RayCast3D" type="RayCast3D" parent="Monocycle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
 target_position = Vector3(0, 1, 0)
@@ -87,11 +90,12 @@ target_position = Vector3(0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
 target_position = Vector3(0, 1, 0)
 
-[node name="TimerMonocycle" type="Timer" parent="Monocycle"]
-wait_time = 3.0
-
 [node name="Rope" type="Node3D" parent="."]
 script = ExtResource("8_oufqt")
 
 [node name="TimerRope" type="Timer" parent="Rope"]
 wait_time = 3.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Rope"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
+target_position = Vector3(0, 1, 0)

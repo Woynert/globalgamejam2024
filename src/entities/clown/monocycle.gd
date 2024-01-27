@@ -78,6 +78,8 @@ func fall():
 	
 	var manager_request = SharedRes.manager_request as ManagerRequest
 	manager_request.submit_failure(TRICKS.VAR.MONOCYCLE)
+	
+	# TODO: If you fail the monocycle on the rope you fail the rope as well
 
 func unmount():
 	print("D: You unmounted the monocycle")
