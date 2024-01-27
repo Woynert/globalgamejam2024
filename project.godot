@@ -25,6 +25,10 @@ SharedRes="*res://src/model/shared_res.gd"
 window/size/viewport_width=800
 window/size/viewport_height=500
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
+
 [input]
 
 game_up={
