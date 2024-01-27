@@ -79,9 +79,12 @@ func update_remaining():
 	if pay_food:
 		remaining -= GlobalState.cost_food
 
-	label_remaining.text = "%d$" % remaining
 	if remaining < 0:
-		label_remaining.text += " (Insuficient funds)"
+		label_remaining.text = "%d$ (Insuficient funds)" % remaining
+		button_next.disabled = true
+	else:
+		label_remaining.text = "%d$" % remaining
+		button_next.disabled = false
 
 func toggle_pay_food():
 	pay_food = !pay_food

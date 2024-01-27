@@ -12,7 +12,7 @@ size = Vector3(0.133484, 0.682495, 1.70188)
 size = Vector3(1.95629, 0.682495, 0.131524)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5ufn"]
-size = Vector3(1.41422, 0.675537, 1.19052)
+size = Vector3(1.41422, 0.623047, 1.19052)
 
 [node name="Elevator" type="AnimatableBody3D"]
 script = ExtResource("1_2vhcd")
@@ -34,7 +34,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaActivate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172192, 0.284302, -0.199937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172192, 0.258057, -0.199937)
 shape = SubResource("BoxShape3D_y5ufn")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
