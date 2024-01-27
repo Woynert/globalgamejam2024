@@ -13,7 +13,7 @@
 radius = 0.47
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t1t02"]
-radius = 0.852821
+radius = 0.516643
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhmfn"]
 albedo_texture = ExtResource("4_asixb")
@@ -33,6 +33,11 @@ script = ExtResource("1_wnvl0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_m0ywa")
 
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_m0ywa")
+target_position = Vector3(0, -0.05, 0)
+
 [node name="AreaReach" type="Area3D" parent="." node_paths=PackedStringArray("text_billiboard", "hand")]
 collision_layer = 0
 collision_mask = 4
@@ -41,6 +46,7 @@ text_billiboard = NodePath("../TextBilliboard")
 hand = NodePath("../Hand")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaReach"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.446157, 0)
 shape = SubResource("SphereShape3D_t1t02")
 
 [node name="TextBilliboard" type="Label3D" parent="."]
@@ -86,3 +92,6 @@ wait_time = 3.0
 
 [node name="Rope" type="Node3D" parent="."]
 script = ExtResource("8_oufqt")
+
+[node name="TimerRope" type="Timer" parent="Rope"]
+wait_time = 3.0

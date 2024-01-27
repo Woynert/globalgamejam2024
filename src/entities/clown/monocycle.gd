@@ -7,6 +7,7 @@ const ACC = 8
 const MAX_VELOCITY = 5
 const GRAVITY = 18.2
 const ANGLE_TO_FALL = 30 # degrees
+const AIR_RESISTANCE = 0.2
 
 @onready var timer_monocycle = $TimerMonocycle as Timer
 var enabled = false
@@ -21,7 +22,8 @@ func _timer_monocycle_timeout():
 	if enabled:
 		manager_request.submit_trick(TRICKS.VAR.MONOCYCLE)
 
-func move(node: CharacterBody3D, delta: float):
+func move(delta: float):
+	var node: Clown = get_parent()
 	
 	if pin_direction.normalized() == Vector3.UP:
 		pin_direction = pin_direction.rotated(Vector3.FORWARD, deg_to_rad(1))
@@ -53,11 +55,14 @@ func move(node: CharacterBody3D, delta: float):
 	# apply movement
 	var dir_horizontal = Vector3(pin_direction.x, 0, input_dir_2.y).normalized()
 	node.velocity += dir_horizontal * ACC * delta
-	if node.velocity.length() > MAX_VELOCITY:
-		node.velocity = node.velocity.normalized() * MAX_VELOCITY
+	var velocity_horizontal = Vector3(node.velocity.x, 0, node.velocity.z)
+	if velocity_horizontal.length() > MAX_VELOCITY:
+		velocity_horizontal = velocity_horizontal.normalized() * MAX_VELOCITY
+		node.velocity.x = velocity_horizontal.x
+		node.velocity.z = velocity_horizontal.z
 	
 	# gravity
-	if not node.is_on_floor():
+	if not node.is_on_floor_shapecast():
 		node.velocity.y -= GRAVITY * delta
 	
 	# unmount

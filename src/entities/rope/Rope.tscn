@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnaoqvp2rx64l"]
+
+[ext_resource type="Script" path="res://src/entities/rope/rope.gd" id="1_f4ps3"]
+
+[node name="Rope" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_f4ps3")
+item = 5
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.508385, 0, -0.540962)

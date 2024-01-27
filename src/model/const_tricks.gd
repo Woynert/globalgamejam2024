@@ -7,6 +7,7 @@ enum VAR {
 	JUGGLE_CUCHILLO,
 	MONOCYCLE,
 	CAKE_SHOTS,
+	ROPE,
 }
 
 const NAMES = {
@@ -14,6 +15,8 @@ const NAMES = {
 	VAR.JUGGLE_ANTORCHA: "Antorcha",
 	VAR.JUGGLE_CUCHILLO: "Cuchillo",
 	VAR.MONOCYCLE: "Monocyclo",
+	VAR.CAKE_SHOTS: "Cake Shots",
+	VAR.ROPE: "Tightrope",
 }
 
 const HANDEABLE = [
@@ -34,4 +37,5 @@ const MEDIUM_TRICKS = [
 
 const HARD_TRICKS = [
 	VAR.JUGGLE_CUCHILLO,
+	VAR.ROPE,
 ]

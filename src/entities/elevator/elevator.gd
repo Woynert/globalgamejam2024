@@ -8,6 +8,7 @@ var enabled = false
 var up = true
 
 func _ready():
+	print(node_limit.global_position)
 	starting_height = global_position.y
 	($AreaActivate as Area3D).body_entered.connect(_on_body_entered)
 	($AreaActivate as Area3D).body_exited.connect(_on_body_exited)
