@@ -8,6 +8,14 @@ var health: int = 100
 var laugh: int = 50
 var current_request: Array[int] = []
 
+# day related
+
+var day: int = 1
+var day_duration: int = 60 # seconds
+var savings: int = 150
+var cost_rent: int = 100
+var cost_food: int = 20
+
 signal signal_request_changed
 
 func reset():
