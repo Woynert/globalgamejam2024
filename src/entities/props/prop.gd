@@ -1,7 +1,7 @@
 extends Node3D
 class_name Prop
 
-@export var item: ITEMS.VAR
+@export var item: TRICKS.VAR
 @onready var billiboard: Node3D = $visual/billiboard
 
 """

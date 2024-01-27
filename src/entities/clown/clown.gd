@@ -26,7 +26,3 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-func pick_item (item: ITEMS.VAR):
-	# TODO: drop current item
-	hand_node.set_item(item)

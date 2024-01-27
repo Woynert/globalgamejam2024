@@ -2,7 +2,7 @@ extends Node3D
 class_name Hand
 
 var has_item: bool = false
-var item: ITEMS.VAR
+var item: TRICKS.VAR # only some items can be held in hand so beware
 var doing_hand_trick: bool = false
 var hand_trick_phase: bool = false
 var hand_trick_usable: bool = false
@@ -15,7 +15,7 @@ var hand_trick_item: HandTrickItem = null
 func unset_item():
 	has_item = false
 
-func set_item(p_item: ITEMS.VAR):
+func set_item(p_item: TRICKS.VAR):
 	item = p_item
 	has_item = true
 
@@ -66,9 +66,9 @@ func start_hand_trick():
 	self.add_child(hand_trick_item)
 	
 func stop_hand_trick():
+	print("Stopping hand trick")
 	doing_hand_trick = false
 	hand_trick_phase = false
 	hand_trick_usable = false
-	print("Stopping hand trick")
 	if is_instance_valid(hand_trick_item):
 		(hand_trick_item as Node3D).queue_free()

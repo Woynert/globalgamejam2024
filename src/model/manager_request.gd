@@ -27,7 +27,6 @@ func _timer_request_timeout():
 	
 func _timer_public_review_timeout():
 	GlobalState.set_laugh(GlobalState.laugh - BOREDOM_RATE)
-	print(GlobalState.laugh)
 
 func submit_trick(tricks: Array[int]):
 	print("tricks submitted %s" % tricks)
@@ -35,4 +34,3 @@ func submit_trick(tricks: Array[int]):
 	
 func submit_failure(trick: int):
 	print("trick failed %d" % trick)
-	

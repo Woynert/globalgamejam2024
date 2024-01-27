@@ -10,7 +10,7 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ym1wy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t1t02"]
-radius = 1.59415
+radius = 0.852821
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhmfn"]
 albedo_texture = ExtResource("4_asixb")
