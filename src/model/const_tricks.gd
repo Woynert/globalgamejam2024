@@ -6,7 +6,7 @@ enum VAR {
 	JUGGLE_ANTORCHA,
 	JUGGLE_CUCHILLO,
 	MONOCYCLE,
-	CAKE_SHOTS,
+	CAKE,
 	ROPE,
 }
 
@@ -15,15 +15,28 @@ const NAMES = {
 	VAR.JUGGLE_ANTORCHA: "Antorcha",
 	VAR.JUGGLE_CUCHILLO: "Cuchillo",
 	VAR.MONOCYCLE: "Monocyclo",
-	VAR.CAKE_SHOTS: "Cake Shots",
+	VAR.CAKE: "Cake Shots",
 	VAR.ROPE: "Tightrope",
 }
+
+# by mecanic
 
 const HANDEABLE = [
 	VAR.JUGGLE_BASTON,
 	VAR.JUGGLE_ANTORCHA,
 	VAR.JUGGLE_CUCHILLO,
 ]
+
+const MOUNTABLE = [
+	VAR.MONOCYCLE,
+]
+
+const ON_SITE = [
+	VAR.ROPE,
+	VAR.CAKE,
+]
+
+# by difficulty
 
 const EASY_TRICKS = [
 	VAR.JUGGLE_BASTON,
@@ -32,7 +45,7 @@ const EASY_TRICKS = [
 const MEDIUM_TRICKS = [
 	VAR.JUGGLE_ANTORCHA,
 	VAR.MONOCYCLE,
-	VAR.CAKE_SHOTS,
+	VAR.CAKE,
 ]
 
 const HARD_TRICKS = [

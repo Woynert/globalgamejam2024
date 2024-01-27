@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dafcrsdyetvwn"]
+[gd_scene load_steps=15 format=3 uid="uid://dafcrsdyetvwn"]
 
-[ext_resource type="Script" path="res://src/level/root.gd" id="1_8mpsg"]
+[ext_resource type="Script" path="res://src/level/level_pilot.gd" id="1_8mpsg"]
 [ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown/clown.tscn" id="1_luuoo"]
 [ext_resource type="PackedScene" uid="uid://byvu4kyjt73vr" path="res://src/entities/props/baston/baston.tscn" id="2_lumbh"]
 [ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_wbld2"]
@@ -9,9 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://c34w8f8vwefhc" path="res://src/entities/elevator/elevator.tscn" id="6_5ka5h"]
 [ext_resource type="PackedScene" uid="uid://celvba4tj13tj" path="res://src/ui/ui_game.tscn" id="6_554uk"]
 [ext_resource type="PackedScene" uid="uid://dnaoqvp2rx64l" path="res://src/entities/rope/Rope.tscn" id="7_ve0q6"]
+[ext_resource type="PackedScene" uid="uid://d2bm8hq0enmaw" path="res://src/entities/cake/cake.tscn" id="8_6ejyo"]
+[ext_resource type="Script" path="res://src/entities/cake/cake_play_area.gd" id="9_6463n"]
+[ext_resource type="PackedScene" uid="uid://dsrdhm8bbdbpl" path="res://src/entities/cake/canon.tscn" id="9_h5sw5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8iuvp"]
 size = Vector3(6.65918, 0.258057, 0.890198)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a4m2d"]
+size = Vector3(5.93652, 3.36109, 5.72693)
 
 [node name="LevelPilot" type="Node3D"]
 script = ExtResource("1_8mpsg")
@@ -39,6 +45,11 @@ use_collision = true
 radius = 6.81658
 sides = 33
 
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.3098, 0, -8.87435)
+radius = 6.81658
+sides = 33
+
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7476, 9.53674e-07, -8.14064)
 radius = 9.419
@@ -63,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 0.462058, 0.88685, 0, -0.88685, 0.462058, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37252, 0)
 
 [node name="Camera3D" type="Camera3D" parent="entities/Clown"]
-transform = Transform3D(0.868433, 0.35693, -0.34413, 2.17478e-11, 0.694081, 0.719897, 0.495807, -0.625182, 0.602763, -4.27928, 11.369, 9.82085)
+transform = Transform3D(1, 0, 0, 0, 0.694658, 0.71934, 0, -0.71934, 0.694658, 0, 11.369, 10.0903)
 fov = 28.9
 
 [node name="Baston" parent="entities" instance=ExtResource("2_lumbh")]
@@ -101,6 +112,53 @@ shape = SubResource("BoxShape3D_8iuvp")
 
 [node name="MarkerRope" type="Marker3D" parent="entities"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1859, 3.96623, -7.32599)
+
+[node name="cake_shot" type="Node3D" parent="entities"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.44749, 0, -8.82482)
+
+[node name="Cake" parent="entities/cake_shot" node_paths=PackedStringArray("canons") instance=ExtResource("8_6ejyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46136, 0.454198, 0.0340815)
+canons = [NodePath("../canons/Canon"), NodePath("../canons/Canon2"), NodePath("../canons/Canon3")]
+
+[node name="CakePlayArea" type="StaticBody3D" parent="entities/cake_shot"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("9_6463n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entities/cake_shot/CakePlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689983, 1.63474, 0.000491142)
+shape = SubResource("BoxShape3D_a4m2d")
+
+[node name="canons" type="Node3D" parent="entities/cake_shot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.37972, 0, 8.85562)
+
+[node name="Canon" parent="entities/cake_shot/canons" instance=ExtResource("9_h5sw5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.801615, -10.9328)
+
+[node name="Canon2" parent="entities/cake_shot/canons" instance=ExtResource("9_h5sw5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.801615, -9.11353)
+
+[node name="Canon3" parent="entities/cake_shot/canons" instance=ExtResource("9_h5sw5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.801615, -7.27099)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="entities/cake_shot"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29326, 0.611183, -0.0351791)
+size = Vector3(1, 1.46594, 5.68936)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09852, 0.611183, -0.222912)
+size = Vector3(1.3363, 1.46594, 5.04343)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91277, 0.363411, -3.02261)
+size = Vector3(3.76099, 0.970398, 0.427216)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04698, 0.363411, 3.01322)
+size = Vector3(3.49255, 0.970398, 0.427216)
 
 [node name="UiPublic" parent="." instance=ExtResource("5_v02bj")]
 

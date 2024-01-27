@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=15 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://src/entities/clown/monocycle.gd" id="6_b8eki"]
 [ext_resource type="Script" path="res://src/entities/clown/walk_controller.gd" id="7_akx8q"]
 [ext_resource type="Script" path="res://src/entities/clown/rope.gd" id="8_oufqt"]
+[ext_resource type="Script" path="res://src/entities/clown/cake_controller.gd" id="9_mmxh3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0ywa"]
 radius = 0.47
@@ -99,3 +100,9 @@ wait_time = 3.0
 [node name="RayCast3D" type="RayCast3D" parent="Rope"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.504011)
 target_position = Vector3(0, 1, 0)
+
+[node name="CakeController" type="Node3D" parent="."]
+script = ExtResource("9_mmxh3")
+
+[node name="TimerCake" type="Timer" parent="CakeController"]
+wait_time = 3.0

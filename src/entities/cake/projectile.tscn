@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://tleqor53o3h5"]
+
+[ext_resource type="Script" path="res://src/entities/cake/projectile.gd" id="1_7t8jc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8krxw"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_3nkfi"]
+
+[node name="Projectile" type="Area3D"]
+collision_layer = 4
+script = ExtResource("1_7t8jc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.61935, 0, 0, 0, 0.61935, 0, 0, 0, 0.61935, 0, 0, 0)
+shape = SubResource("SphereShape3D_8krxw")
+
+[node name="visual" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(0.518213, 0, 0, 0, -2.26518e-08, 0.518213, 0, -0.518213, -2.26518e-08, 0, 0, -0.150952)
+mesh = SubResource("PrismMesh_3nkfi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(0.518213, 0, 0, 0, -2.26518e-08, 0.518213, 0, -0.518213, -2.26518e-08, 0, 0, 0.0486284)
+mesh = SubResource("PrismMesh_3nkfi")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsrdhm8bbdbpl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y1d52"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cguhw"]
+
+[node name="Canon" type="Node3D"]
+
+[node name="visual" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1.17559)
+mesh = SubResource("CylinderMesh_y1d52")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.433963, 1.70675)
+mesh = SubResource("BoxMesh_cguhw")
+skeleton = NodePath("../..")

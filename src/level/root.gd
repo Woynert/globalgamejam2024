@@ -1,7 +1,3 @@
-extends Node3D
+extends Node
+class_name Root
 
-func _ready():
-	GlobalState.reset()
-	PublicRequest.generate_request()
-	
-	SharedRes.manager_request = $ManagerRequest as ManagerRequest
