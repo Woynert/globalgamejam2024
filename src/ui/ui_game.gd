@@ -15,6 +15,7 @@ func _on_current_request_changed():
 func _physics_process(delta):
 	set_value_health(GlobalState.health)
 	set_value_laugh(GlobalState.laugh)
+	set_value_money(GlobalState.savings)
 	update_timeleft()
 
 # setters
@@ -29,7 +30,7 @@ func set_value_experience(value):
 	($LabelExperience as Label).text = str("Exp: %d" % value)
 
 func set_value_money(value):
-	($LabelMoney as Label).text = str("Money: %d" % value)
+	($LabelMoney as Label).text = str("Money: %d (+%d/sec)" % [value, GlobalState.money_per_second])
 
 func set_current_reequest(request: Array[int]):
 	var text = ""
