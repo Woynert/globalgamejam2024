@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbly1iqr06enf"]
+
+[ext_resource type="Script" path="res://src/entities/crow_manager/crow_pawn.gd" id="1_3aud1"]
+[ext_resource type="Texture2D" uid="uid://dvapud06hng7f" path="res://resource_remote/Sombra Idle 01 .png" id="2_vfw2q"]
+[ext_resource type="Texture2D" uid="uid://btkkasctn3r53" path="res://resource_remote/Sombra One Hand 01.png" id="3_chwae"]
+[ext_resource type="Texture2D" uid="uid://cxhgq11273c7e" path="res://resource_remote/Sombra Two Hands 01.png" id="4_ibbxu"]
+[ext_resource type="Texture2D" uid="uid://cu5uxcyiobufs" path="res://resource_remote/Sombra Idle 02.png" id="5_61keh"]
+[ext_resource type="Texture2D" uid="uid://buinc0bhaua3u" path="res://resource_remote/Sombra One Hand 02.png" id="6_bqtof"]
+[ext_resource type="Texture2D" uid="uid://jc0pe0lsyrag" path="res://resource_remote/Sombra Two Hands 02.png" id="7_r1sob"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ree76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vfw2q")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_chwae")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ibbxu")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7x4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_61keh")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bqtof")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_r1sob")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[node name="CrowPawn" type="Node3D"]
+script = ExtResource("1_3aud1")
+
+[node name="visual" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
+
+[node name="one" type="AnimatedSprite3D" parent="visual"]
+transform = Transform3D(0.568337, 0, 0, 0, 0.568337, 0, 0, 0, 0.568337, 0, 1.06412, 0)
+sprite_frames = SubResource("SpriteFrames_ree76")
+animation = &"3"
+
+[node name="two" type="AnimatedSprite3D" parent="visual"]
+transform = Transform3D(0.568337, 0, 0, 0, 0.568337, 0, 0, 0, 0.568337, 0, 1.06412, 0)
+sprite_frames = SubResource("SpriteFrames_a7x4u")
+animation = &"3"
+
+[node name="three" type="AnimatedSprite3D" parent="visual"]
+transform = Transform3D(0.568337, 0, 0, 0, 0.568337, 0, 0, 0, 0.568337, 0, 1.06412, 0)
+sprite_frames = SubResource("SpriteFrames_ree76")
+animation = &"3"
