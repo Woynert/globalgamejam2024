@@ -19,7 +19,7 @@ enum MENU {
 	MENU.GAME_INFO: null,
 }
 
-func destroy_all ():
+func unload_all ():
 	var children = get_children()
 	for child in children:
 		child.queue_free()
@@ -27,7 +27,7 @@ func destroy_all ():
 func show_menu (menu: MENU):
 	match menu:
 		MENU.GAME:
-			destroy_all()
+			unload_all()
 	var node_menu = spawn_menu(menu)
 	add_child(node_menu)
 

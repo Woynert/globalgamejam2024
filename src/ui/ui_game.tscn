@@ -51,3 +51,14 @@ offset_top = 135.0
 offset_right = 641.0
 offset_bottom = 158.0
 text = "Request: 1, 2"
+
+[node name="LabelTime" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "1:00"

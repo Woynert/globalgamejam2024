@@ -14,6 +14,7 @@ func _on_current_request_changed():
 func _physics_process(delta):
 	set_value_health(GlobalState.health)
 	set_value_laugh(GlobalState.laugh)
+	update_timeleft()
 
 # setters
 
@@ -34,3 +35,6 @@ func set_current_reequest(request: Array[int]):
 	for req in request:
 		text += "%s\n" % TRICKS.NAMES[req]
 	($LabelRequest as Label).text = str("Requests:\n%s" % text)
+	
+func update_timeleft ():
+	$LabelTime.text = str(int(SharedRes.get_manager_level().level_timer.time_left))
