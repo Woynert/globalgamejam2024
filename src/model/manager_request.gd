@@ -9,6 +9,7 @@ This node is in charge of managing all the logic regarding the public requests
 @onready var timer_public_review = $TimerPublicReview as Timer
 var BOREDOM_RATE = 3
 var LAUGH_VALUE = 30
+var FAIL_PENALTY = 10
 
 func _ready():
 	start()
@@ -34,4 +35,5 @@ func submit_trick(trick: int):
 	print("trick submitted %d" % trick)
 	
 func submit_failure(trick: int):
+	GlobalState.set_laugh(GlobalState.laugh - FAIL_PENALTY)
 	print("trick failed %d" % trick)
