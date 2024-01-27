@@ -4,3 +4,6 @@
 
 [node name="CrowManager" type="Node3D"]
 script = ExtResource("1_012kt")
+
+[node name="TimerUpdatePawns" type="Timer" parent="."]
+wait_time = 2.0

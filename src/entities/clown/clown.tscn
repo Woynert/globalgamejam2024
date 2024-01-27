@@ -612,7 +612,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97981, 0)
 flip_h = true
 sprite_frames = SubResource("SpriteFrames_0ns3t")
 animation = &"idle"
-frame_progress = 0.550315
+frame_progress = 0.480695
 
 [node name="SpriteUpper" type="AnimatedSprite3D" parent="Visual/sprites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97981, 0.1)

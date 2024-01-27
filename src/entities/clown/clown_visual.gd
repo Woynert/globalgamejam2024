@@ -70,7 +70,6 @@ func _physics_process(delta):
 		ani_player_low.play("jump")
 		if !doing_hand_trick: ani_player_up.play("jump")
 		
-	print(ani_player_low.current_animation, " : ", ani_player_up.current_animation)
 	if doing_hand_trick:
 		sprite_up.position.z = -0.1
 		match ani_player_low.current_animation:
