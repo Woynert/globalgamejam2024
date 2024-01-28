@@ -19,6 +19,15 @@ const NAMES = {
 	VAR.ROPE: "Tightrope",
 }
 
+const IMAGE_RESOURCE = {
+	VAR.JUGGLE_BASTON: preload("res://resource_remote/Baston.png"),
+	VAR.JUGGLE_ANTORCHA: preload("res://resource_remote/Baston fuego.png"),
+	VAR.JUGGLE_CUCHILLO: preload("res://resource_remote/Hacha.png"),
+	VAR.MONOCYCLE: preload("res://resource_remote/Monociclo.png"),
+	VAR.CAKE: preload("res://resource_remote/Cannon.png"),
+	VAR.ROPE: preload("res://resource_remote/Simbolo cuerda floja.png"),
+}
+
 # by mecanic
 
 const HANDEABLE = [

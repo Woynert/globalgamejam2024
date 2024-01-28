@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=3 uid="uid://celvba4tj13tj"]
+
+[ext_resource type="Script" path="res://src/ui/ui_game/ui_game.gd" id="1_xs0ex"]
+[ext_resource type="PackedScene" uid="uid://cu633fka3un4w" path="res://src/ui/ui_bar.tscn" id="2_648ng"]
+[ext_resource type="Script" path="res://src/ui/ui_game/BubbleManager.gd" id="3_dgka0"]
+[ext_resource type="Texture2D" uid="uid://bt0t2vcdaxtjv" path="res://resource_remote/symbol/globe.png" id="3_v7xme"]
+[ext_resource type="Script" path="res://src/ui/ui_game/Bubble.gd" id="4_k414w"]
+[ext_resource type="Texture2D" uid="uid://cvdynlrmidl22" path="res://resource_remote/Baston.png" id="6_egf1d"]
+
+[node name="UiGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xs0ex")
+
+[node name="UiBarHealth" parent="." instance=ExtResource("2_648ng")]
+layout_mode = 1
+offset_left = 583.0
+offset_top = 12.0
+offset_right = 781.0
+offset_bottom = 39.0
+label_text = "health"
+
+[node name="UiBarLaugh" parent="." instance=ExtResource("2_648ng")]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 46.0
+offset_right = 781.0
+offset_bottom = 73.0
+label_text = "laugh"
+
+[node name="LabelMoney" type="Label" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 83.0
+offset_right = 665.0
+offset_bottom = 106.0
+text = "Money: 10"
+
+[node name="LabelExperience" type="Label" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 109.0
+offset_right = 640.0
+offset_bottom = 132.0
+text = "Exp: 10"
+
+[node name="LabelRequest" type="Label" parent="."]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 135.0
+offset_right = 641.0
+offset_bottom = 158.0
+text = "Request: 1, 2"
+
+[node name="LabelTime" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "1:00"
+
+[node name="LabelDay" type="Label" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Day X"
+
+[node name="BubbleManager" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_dgka0")
+
+[node name="Bubble" type="Control" parent="BubbleManager"]
+anchors_preset = 0
+offset_left = 675.0
+offset_top = 381.0
+offset_right = 810.0
+offset_bottom = 508.0
+script = ExtResource("4_k414w")
+metadata/_edit_group_ = true
+
+[node name="TextureBubble" type="TextureRect" parent="BubbleManager/Bubble"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 123.0
+offset_bottom = 124.0
+texture = ExtResource("3_v7xme")
+
+[node name="TextureIcon" type="TextureRect" parent="BubbleManager/Bubble"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 103.0
+offset_bottom = 104.0
+texture = ExtResource("6_egf1d")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Bubble2" type="Control" parent="BubbleManager"]
+anchors_preset = 0
+offset_left = 561.0
+offset_top = 381.0
+offset_right = 696.0
+offset_bottom = 508.0
+script = ExtResource("4_k414w")
+metadata/_edit_group_ = true
+
+[node name="TextureBubble" type="TextureRect" parent="BubbleManager/Bubble2"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 4.0
+offset_right = 116.0
+offset_bottom = 124.0
+texture = ExtResource("3_v7xme")
+
+[node name="TextureIcon" type="TextureRect" parent="BubbleManager/Bubble2"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 23.0
+offset_right = 96.0
+offset_bottom = 104.0
+texture = ExtResource("6_egf1d")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Bubble3" type="Control" parent="BubbleManager"]
+anchors_preset = 0
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 583.0
+offset_bottom = 511.0
+script = ExtResource("4_k414w")
+metadata/_edit_group_ = true
+
+[node name="TextureBubble" type="TextureRect" parent="BubbleManager/Bubble3"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 1.0
+offset_right = 110.0
+offset_bottom = 121.0
+texture = ExtResource("3_v7xme")
+
+[node name="TextureIcon" type="TextureRect" parent="BubbleManager/Bubble3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 101.0
+texture = ExtResource("6_egf1d")
+expand_mode = 1
+stretch_mode = 4

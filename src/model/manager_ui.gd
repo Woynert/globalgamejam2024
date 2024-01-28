@@ -14,7 +14,7 @@ enum MENU {
 	MENU.MAIN: preload("res://src/ui/ui_main.tscn"),
 	MENU.SETTINGS: null,
 	MENU.DAY_RESUME: preload("res://src/ui/ui_day_resume.tscn"),
-	MENU.GAME: preload("res://src/ui/ui_game.tscn"),
+	MENU.GAME: preload("res://src/ui/ui_game/ui_game.tscn"),
 	MENU.GAME_PAUSE: null,
 	MENU.GAME_INFO: null,
 }

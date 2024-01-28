@@ -37,6 +37,7 @@ func set_current_reequest(request: Array[int]):
 	for req in request:
 		text += "%s\n" % TRICKS.NAMES[req]
 	($LabelRequest as Label).text = str("Requests:\n%s" % text)
+	$BubbleManager.update_bubbles(request)
 	
 func update_timeleft ():
 	$LabelTime.text = str(int(SharedRes.get_manager_level().level_timer.time_left))

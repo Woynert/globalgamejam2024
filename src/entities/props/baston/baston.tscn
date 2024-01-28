@@ -47,6 +47,7 @@ transform = Transform3D(0.464808, 0, 0, 0, 0.427562, 0.182309, 0, -0.182309, 0.4
 texture = ExtResource("3_rom40")
 
 [node name="cuchillas" type="Node3D" parent="visual"]
+visible = false
 
 [node name="Sprite3D3" type="Sprite3D" parent="visual/cuchillas"]
 transform = Transform3D(0.585777, 0, 0, 0, 0.538838, 0.229756, 0, -0.229756, 0.538838, 0.130063, 1.05602, -0.114427)

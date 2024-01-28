@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/entities/clown/hand_trick_item.gd" id="1_3sfvl"]
 [ext_resource type="Texture2D" uid="uid://b37bb5ci4fjep" path="res://resource_remote/Baston fuego.png" id="2_nmy0g"]
-[ext_resource type="Texture2D" uid="uid://cvdynlrmidl22" path="res://resource_remote/Baston .png" id="3_c6qh0"]
+[ext_resource type="Texture2D" uid="uid://cvdynlrmidl22" path="res://resource_remote/Baston.png" id="3_c6qh0"]
 [ext_resource type="Texture2D" uid="uid://0qnpvyqwxqse" path="res://resource_remote/Hacha.png" id="4_15818"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r0v5x"]
