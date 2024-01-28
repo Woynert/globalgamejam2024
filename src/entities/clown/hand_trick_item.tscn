@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://u1v4mdxwbio1"]
+[gd_scene load_steps=12 format=3 uid="uid://u1v4mdxwbio1"]
 
 [ext_resource type="Script" path="res://src/entities/clown/hand_trick_item.gd" id="1_3sfvl"]
 [ext_resource type="Texture2D" uid="uid://b37bb5ci4fjep" path="res://resource_remote/Baston fuego.png" id="2_nmy0g"]
-[ext_resource type="Texture2D" uid="uid://cvdynlrmidl22" path="res://resource_remote/Baston.png" id="3_c6qh0"]
+[ext_resource type="Texture2D" uid="uid://cvdynlrmidl22" path="res://resource_remote/Baston.png" id="3_k2c1f"]
 [ext_resource type="Texture2D" uid="uid://0qnpvyqwxqse" path="res://resource_remote/Hacha.png" id="4_15818"]
+[ext_resource type="Texture2D" uid="uid://bmxooefsqhn7v" path="res://resource_remote/fuego circular antorcha 1.png" id="5_lsu0r"]
+[ext_resource type="Texture2D" uid="uid://bn6425u7hy7lj" path="res://resource_remote/fuego circular antorcha 2.png" id="6_e7k7v"]
+[ext_resource type="Texture2D" uid="uid://bu3joogfgggip" path="res://resource_remote/fuego circular antorcha 3.png" id="7_uwjuf"]
+[ext_resource type="Texture2D" uid="uid://c63ehgxb6tw5w" path="res://resource_remote/fuego circular antorcha 4.png" id="8_c4o0v"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r0v5x"]
 
@@ -19,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_c6qh0")
+"texture": ExtResource("3_k2c1f")
 }],
 "loop": true,
 "name": &"baston",
@@ -34,6 +38,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gn10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lsu0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e7k7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uwjuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c4o0v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="HandTrickItem" type="Area3D"]
 script = ExtResource("1_3sfvl")
 
@@ -44,5 +68,16 @@ shape = SubResource("SphereShape3D_r0v5x")
 transform = Transform3D(0.295531, 0, 0, 0, 0.255937, 0.147766, 0, -0.147766, 0.255937, 0, 0, 0)
 
 [node name="SpriteItems" type="AnimatedSprite3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_gghum")
 animation = &"antorcha"
+
+[node name="Fire" type="AnimatedSprite3D" parent="visual/SpriteItems"]
+transform = Transform3D(0.999954, 0.00973895, 7.10543e-15, -0.00973866, 0.999952, -2.98023e-07, 4.28408e-08, 2.98023e-07, 1, -0.583033, 0.186176, -0.2)
+sprite_frames = SubResource("SpriteFrames_5gn10")
+frame_progress = 0.787488
+speed_scale = 3.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="visual/SpriteItems/Fire"]
+transform = Transform3D(3.38374, -1.60933e-06, -1.78814e-07, -5.96046e-08, 3.38374, 1.19209e-07, -1.78814e-07, 1.19209e-07, 3.38374, 0, 0, 0)
+omni_range = 2.51829

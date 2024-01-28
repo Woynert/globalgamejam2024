@@ -19,6 +19,8 @@ func setup(p_starting_position: float, item: TRICKS.VAR):
 			$visual/SpriteItems.animation = "baston"
 		TRICKS.VAR.JUGGLE_ANTORCHA:
 			$visual/SpriteItems.animation = "antorcha"
+			$visual/SpriteItems/Fire.visible = true
+			$visual/SpriteItems/Fire.play("default")
 		TRICKS.VAR.JUGGLE_CUCHILLO:
 			$visual/SpriteItems.animation = "cuchillo"
 	
