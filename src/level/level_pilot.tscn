@@ -78,18 +78,18 @@ transform = Transform3D(1, 0, 0, 0, 0.694658, 0.71934, 0, -0.71934, 0.694658, 0,
 fov = 28.9
 
 [node name="Baston" parent="entities" instance=ExtResource("2_lumbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32918, -4.76837e-07, -2.71673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68012, -7.15256e-07, -3.69464)
 
 [node name="Baston2" parent="entities" instance=ExtResource("2_lumbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61533, -1.43051e-06, -1.76241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0321332, -1.43051e-06, -4.87506)
 item = 1
 
 [node name="Baston3" parent="entities" instance=ExtResource("2_lumbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7553, -1.90735e-06, -0.257956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86294, -1.90735e-06, -3.59614)
 item = 2
 
 [node name="Baston4" parent="entities" instance=ExtResource("2_lumbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67471, -2.86102e-06, 1.28275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22043, -2.86102e-06, 1.05099)
 item = 3
 
 [node name="Node3D" type="Node3D" parent="entities"]

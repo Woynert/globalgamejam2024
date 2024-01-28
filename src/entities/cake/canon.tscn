@@ -23,5 +23,5 @@ mesh = SubResource("BoxMesh_cguhw")
 skeleton = NodePath("../..")
 
 [node name="Sprite3D" type="Sprite3D" parent="visual"]
-transform = Transform3D(-1.95347e-08, 0, 0.446901, 0, 0.446901, 0, -0.446901, 0, -1.95347e-08, 0.0327761, -0.277385, 1.05001)
+transform = Transform3D(-1.81851e-08, -0.163224, 0.416027, -7.13473e-09, 0.416027, 0.163224, -0.446901, -3.70428e-16, -1.95347e-08, 0.0327761, -0.277385, 1.05001)
 texture = ExtResource("1_mex52")

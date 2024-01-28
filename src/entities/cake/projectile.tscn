@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://tleqor53o3h5"]
+[gd_scene load_steps=5 format=3 uid="uid://tleqor53o3h5"]
 
 [ext_resource type="Script" path="res://src/entities/cake/projectile.gd" id="1_7t8jc"]
+[ext_resource type="Texture2D" uid="uid://cxilcpihwpuip" path="res://resource_remote/Pastel.png" id="2_5i44m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8krxw"]
+radius = 0.382119
 
 [sub_resource type="PrismMesh" id="PrismMesh_3nkfi"]
 
@@ -18,8 +20,14 @@ shape = SubResource("SphereShape3D_8krxw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
 transform = Transform3D(0.518213, 0, 0, 0, -2.26518e-08, 0.518213, 0, -0.518213, -2.26518e-08, 0, 0, -0.150952)
+visible = false
 mesh = SubResource("PrismMesh_3nkfi")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="visual"]
 transform = Transform3D(0.518213, 0, 0, 0, -2.26518e-08, 0.518213, 0, -0.518213, -2.26518e-08, 0, 0, 0.0486284)
+visible = false
 mesh = SubResource("PrismMesh_3nkfi")
+
+[node name="Sprite3D" type="Sprite3D" parent="visual"]
+transform = Transform3D(0.151345, -0.00274216, 0.347464, -0.347407, 0.00629447, 0.15137, -0.00686584, -0.378942, -1.97542e-08, 0, 0, 0)
+texture = ExtResource("2_5i44m")
