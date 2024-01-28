@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=64 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
@@ -44,6 +44,8 @@
 [ext_resource type="Texture2D" uid="uid://caqu4ajdcw67f" path="res://resource_remote/Plin walk Brazos Jiggle 02.png" id="33_8iyug"]
 [ext_resource type="Texture2D" uid="uid://clijm2g64xrgu" path="res://resource_remote/Plin walk Brazos Jiggle 03.png" id="34_gw0tt"]
 [ext_resource type="Texture2D" uid="uid://dkhymsta5pdhj" path="res://resource_remote/Plin walk Brazos Jiggle 04.png" id="35_6gyhw"]
+[ext_resource type="PackedScene" uid="uid://c7pj3pr8gh4hl" path="res://src/ui/ui_widgets/ui_widgets.tscn" id="45_iaarh"]
+[ext_resource type="Script" path="res://src/ui/ui_widgets/ui_clown_widgets.gd" id="46_6abon"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0ywa"]
 radius = 0.47
@@ -612,7 +614,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97981, 0)
 flip_h = true
 sprite_frames = SubResource("SpriteFrames_0ns3t")
 animation = &"idle"
-frame_progress = 0.480695
 
 [node name="SpriteUpper" type="AnimatedSprite3D" parent="Visual/sprites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97981, 0.1)
@@ -661,3 +662,6 @@ script = ExtResource("9_mmxh3")
 
 [node name="TimerCake" type="Timer" parent="CakeController"]
 wait_time = 3.0
+
+[node name="UiWidgets" parent="." instance=ExtResource("45_iaarh")]
+script = ExtResource("46_6abon")

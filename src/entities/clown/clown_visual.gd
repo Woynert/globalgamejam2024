@@ -59,6 +59,9 @@ func _physics_process(delta):
 	else:
 		$sprites.rotation.z = 0
 		$sprites.position.y = 0
+		$sprites.rotation.x = 0
+	if on_rope:
+		$sprites.rotation.x = -(Vector3.UP).angle_to(clown.node_rope.pin_direction)
 	
 	if walking && on_floor:
 		ani_player_low.play(move_animation)

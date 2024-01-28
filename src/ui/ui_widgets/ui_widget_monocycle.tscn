@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://xt660ktqh23c"]
+
+[ext_resource type="Script" path="res://src/ui/ui_widgets/ui_widget_monocycle.gd" id="1_wdr36"]
+[ext_resource type="Script" path="res://src/ui/ui_widgets/ui_widget_monocycle_bar.gd" id="2_dm4u6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ag7em"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mhtc"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="UiWidgetMonocycle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wdr36")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -49.0
+offset_right = 13.0
+offset_bottom = 60.0
+script = ExtResource("2_dm4u6")
+horizontal = false
+
+[node name="KeyA" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -83.0
+offset_right = 13.0
+offset_bottom = -56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ag7em")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="KeyA"]
+layout_mode = 2
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyB" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 65.0
+offset_right = 14.0
+offset_bottom = 92.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mhtc")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="KeyB"]
+layout_mode = 2
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1

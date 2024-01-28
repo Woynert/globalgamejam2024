@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvolgiajqrfix"]
+
+[ext_resource type="Script" path="res://src/ui/ui_widgets/ui_widget_mouse.gd" id="1_tv4m4"]
+
+[node name="UiWidgetMouse" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 51.0
+offset_bottom = 55.0
+script = ExtResource("1_tv4m4")

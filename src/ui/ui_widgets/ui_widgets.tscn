@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7pj3pr8gh4hl"]
+
+[ext_resource type="PackedScene" uid="uid://cvolgiajqrfix" path="res://src/ui/ui_widgets/ui_widget_mouse.tscn" id="1_lbpos"]
+[ext_resource type="PackedScene" uid="uid://xt660ktqh23c" path="res://src/ui/ui_widgets/ui_widget_monocycle.tscn" id="2_l54dt"]
+
+[node name="UiWidgets" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = -102.0
+offset_right = 171.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UiWidgetMouse" parent="Control" instance=ExtResource("1_lbpos")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -27.5
+offset_right = 0.0
+offset_bottom = 27.5
+grow_horizontal = 0
+grow_vertical = 2
+SIZE = Vector2(80, 80)
+
+[node name="UiWidgetMonocycle" parent="Control" instance=ExtResource("2_l54dt")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
