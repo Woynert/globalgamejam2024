@@ -53,7 +53,7 @@ func _area_area_entered(area: Node3D):
 	if area is Projectile:
 		if cake_controller.enabled:
 			cake_controller.fail()
-			area.queue_free()
+			area.destroy()
 			var clown = get_parent()
 			clown.node_stunt_manager.enable(StuntManager.STUNT.HEADACHE)
 

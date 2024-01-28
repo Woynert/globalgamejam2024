@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://fisyli6fuu76"]
+
+[ext_resource type="Script" path="res://src/entities/cake/cake_particle.gd" id="1_2wqtl"]
+[ext_resource type="Texture2D" uid="uid://csw24xiyytsf3" path="res://resource_remote/Pastel explosion 1.png" id="1_banlq"]
+[ext_resource type="Texture2D" uid="uid://cxqllnoqqd7u0" path="res://resource_remote/Pastel explosion 2.png" id="2_637xa"]
+[ext_resource type="Texture2D" uid="uid://ctnoadmb4autw" path="res://resource_remote/Pastel explosion 3.png" id="3_c2iwt"]
+[ext_resource type="Texture2D" uid="uid://bpyfnqdbfxcgw" path="res://resource_remote/Pastel explosion 4.png" id="4_ji361"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmr7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_banlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_637xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c2iwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ji361")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CakeParticle" type="Node3D"]
+script = ExtResource("1_2wqtl")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.323696, 0, 0, 0, 0.323696, 0, 0, 0, 0.323696, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_tmr7g")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+speed_scale = 2.3

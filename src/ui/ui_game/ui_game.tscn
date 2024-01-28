@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://celvba4tj13tj"]
+[gd_scene load_steps=12 format=3 uid="uid://celvba4tj13tj"]
 
 [ext_resource type="Script" path="res://src/ui/ui_game/ui_game.gd" id="1_xs0ex"]
 [ext_resource type="PackedScene" uid="uid://cu633fka3un4w" path="res://src/ui/ui_bar.tscn" id="2_648ng"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bn7rnc0v4biii" path="res://resource_remote/symbol/heart.png" id="7_m2mrr"]
 [ext_resource type="Texture2D" uid="uid://cdley7myi83wf" path="res://resource_remote/symbol/exp.png" id="8_fjcx1"]
 [ext_resource type="Texture2D" uid="uid://vofxljbin4c4" path="res://resource_remote/symbol/money.png" id="9_q88ax"]
+[ext_resource type="Texture2D" uid="uid://ct0jw03vhbx6d" path="res://resource_remote/symbol/clock.png" id="10_b145g"]
 
 [node name="UiGame" type="Control"]
 layout_mode = 3
@@ -218,7 +219,16 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="DayInfo/MarginContainer"]
 layout_mode = 2
 
-[node name="LabelTime" type="Label" parent="DayInfo/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DayInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="DayInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_b145g")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="LabelTime" type="Label" parent="DayInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "1:00"
 

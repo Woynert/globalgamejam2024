@@ -35,14 +35,10 @@ func set_value_money(value):
 	($Bar/VBoxContainer/Grid/InfoMoney as UiBar).set_value(str("Money: %d (+%d/sec)" % [value, GlobalState.money_per_second]))
 
 func set_current_reequest(request: Array[int]):
-	#var text = ""
-	#for req in request:
-	#	text += "%s\n" % TRICKS.NAMES[req]
-	#($LabelRequest as Label).text = str("Requests:\n%s" % text)
 	$BubbleManager.update_bubbles(request)
 	
 func update_timeleft ():
-	$DayInfo/MarginContainer/VBoxContainer/LabelTime.text = str(int(SharedRes.get_manager_level().level_timer.time_left))
+	$DayInfo/MarginContainer/VBoxContainer/HBoxContainer/LabelTime.text = str(int(SharedRes.get_manager_level().level_timer.time_left))
 
 func update_day ():
 	$DayInfo/MarginContainer/VBoxContainer/LabelDay.text = "Day %d" % GlobalState.day

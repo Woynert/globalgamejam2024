@@ -76,7 +76,7 @@ animation = &"antorcha"
 transform = Transform3D(0.999954, 0.00973895, 7.10543e-15, -0.00973866, 0.999952, -2.98023e-07, 4.28408e-08, 2.98023e-07, 1, -0.583033, 0.186176, -0.2)
 visible = false
 sprite_frames = SubResource("SpriteFrames_5gn10")
-frame_progress = 0.757553
+frame_progress = 0.968761
 speed_scale = 3.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="visual/SpriteItems/Fire"]
