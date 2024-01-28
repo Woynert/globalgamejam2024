@@ -133,13 +133,21 @@ shape = SubResource("BoxShape3D_a4m2d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.37972, 0, 8.85562)
 
 [node name="Canon" parent="entities/cake_shot/canons" instance=ExtResource("9_h5sw5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.801615, -10.9328)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.966431, -10.9328)
 
 [node name="Canon2" parent="entities/cake_shot/canons" instance=ExtResource("9_h5sw5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.801615, -9.11353)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.966431, -9.11353)
 
 [node name="Canon3" parent="entities/cake_shot/canons" instance=ExtResource("9_h5sw5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.801615, -7.27099)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.88047, 0.966431, -7.27099)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="entities/cake_shot"]
+visible = false
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09852, 0.611183, -0.222912)
+size = Vector3(1.3363, 1.46594, 5.04343)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="entities/cake_shot"]
 use_collision = true
@@ -147,10 +155,6 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29326, 0.611183, -0.0351791)
 size = Vector3(1, 1.46594, 5.68936)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09852, 0.611183, -0.222912)
-size = Vector3(1.3363, 1.46594, 5.04343)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="entities/cake_shot/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91277, 0.363411, -3.02261)

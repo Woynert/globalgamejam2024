@@ -11,7 +11,7 @@ var current_request: Array[int] = []
 # day related
 
 var day: int = 1
-var day_duration: int = 20 # seconds
+var day_duration: int = 60 # seconds
 var savings: int = 110
 var money_per_second: float = 0
 var cost_rent: int = 100

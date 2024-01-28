@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://byvu4kyjt73vr"]
+[gd_scene load_steps=9 format=3 uid="uid://byvu4kyjt73vr"]
 
 [ext_resource type="Texture2D" uid="uid://2wra247lc2cs" path="res://icon.svg" id="1_d2gan"]
 [ext_resource type="Script" path="res://src/entities/props/prop.gd" id="1_japve"]
+[ext_resource type="Texture2D" uid="uid://cesdopldkwrca" path="res://resource_remote/Caja antorchas fuego.png" id="3_rom40"]
+[ext_resource type="Texture2D" uid="uid://dv5ehsbvqhnum" path="res://resource_remote/Caja bastones.png" id="3_xnym3"]
+[ext_resource type="Texture2D" uid="uid://0t8gnhdotd1o" path="res://resource_remote/Base Monociclos.png" id="5_xwfmf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d2ef7"]
 radius = 0.486525
@@ -21,7 +24,35 @@ script = ExtResource("1_japve")
 shape = SubResource("SphereShape3D_d2ef7")
 
 [node name="visual" type="Node3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504366, 0)
+visible = false
 mesh = SubResource("QuadMesh_xilcq")
+
+[node name="bastones" type="Node3D" parent="visual"]
+
+[node name="Sprite3D" type="Sprite3D" parent="visual/bastones"]
+transform = Transform3D(0.464808, 0, 0, 0, 0.427562, 0.182309, 0, -0.182309, 0.427562, 0.130063, 0.78766, 0)
+texture = ExtResource("3_xnym3")
+
+[node name="antorcha" type="Node3D" parent="visual"]
+visible = false
+
+[node name="Sprite3D2" type="Sprite3D" parent="visual/antorcha"]
+transform = Transform3D(0.464808, 0, 0, 0, 0.427562, 0.182309, 0, -0.182309, 0.427562, 0.130063, 0.78766, 0)
+texture = ExtResource("3_rom40")
+
+[node name="cuchillas" type="Node3D" parent="visual"]
+visible = false
+
+[node name="Sprite3D3" type="Sprite3D" parent="visual/cuchillas"]
+transform = Transform3D(0.464808, 0, 0, 0, 0.427562, 0.182309, 0, -0.182309, 0.427562, 0.130063, 0.78766, 0)
+texture = ExtResource("3_rom40")
+
+[node name="monocycle" type="Node3D" parent="visual"]
+
+[node name="Sprite3D" type="Sprite3D" parent="visual/monocycle"]
+transform = Transform3D(0.557769, 0, 0, 0, 0.513075, 0.218771, 0, -0.218771, 0.513075, 0.130063, 1.21267, -0.181219)
+texture = ExtResource("5_xwfmf")
