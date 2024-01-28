@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctkqtdu7kgss8"
+path="res://.godot/imported/Cannon explosion.mp3-e642b9b35d199074cd79d0730ab36fea.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Cannon explosion.mp3"
+dest_files=["res://.godot/imported/Cannon explosion.mp3-e642b9b35d199074cd79d0730ab36fea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
