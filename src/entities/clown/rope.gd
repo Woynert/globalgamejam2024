@@ -98,3 +98,6 @@ func fail():
 	
 	var manager_request = SharedRes.manager_request as ManagerRequest
 	manager_request.submit_failure(TRICKS.VAR.ROPE)
+	
+	var node: Clown = get_parent()
+	node.node_stunt_manager.enable(StuntManager.STUNT.FALL)

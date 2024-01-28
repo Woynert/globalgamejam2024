@@ -4,8 +4,13 @@ class_name Clown
 @onready var node_walk_controller = $WalkController
 @onready var node_monocycle = $Monocycle
 @onready var node_rope = $Rope
+@onready var node_stunt_manager = $StuntManager
 
 func _physics_process(delta):
+	if node_stunt_manager.enabled:
+		node_stunt_manager.move(delta)
+		move_and_slide()
+		return
 	if node_monocycle.enabled:
 		node_monocycle.move(delta)
 	else:

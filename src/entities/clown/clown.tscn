@@ -1,9 +1,10 @@
-[gd_scene load_steps=64 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=68 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
 [ext_resource type="Script" path="res://src/entities/clown/hand.gd" id="2_s7awb"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_visual.gd" id="3_xysmq"]
+[ext_resource type="Texture2D" uid="uid://cpmehqq62glw" path="res://resource_remote/Plin caida 01.png" id="4_fqvph"]
 [ext_resource type="Script" path="res://src/entities/clown/monocycle.gd" id="6_b8eki"]
 [ext_resource type="Texture2D" uid="uid://dndv03osplr17" path="res://resource_remote/Plin Idle 01.png" id="6_x3ohc"]
 [ext_resource type="Texture2D" uid="uid://cc6ltgxf0ljx1" path="res://resource_remote/Plin Idle 02.png" id="7_2lyfu"]
@@ -45,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://clijm2g64xrgu" path="res://resource_remote/Plin walk Brazos Jiggle 03.png" id="34_gw0tt"]
 [ext_resource type="Texture2D" uid="uid://dkhymsta5pdhj" path="res://resource_remote/Plin walk Brazos Jiggle 04.png" id="35_6gyhw"]
 [ext_resource type="PackedScene" uid="uid://c7pj3pr8gh4hl" path="res://src/ui/ui_widgets/ui_widgets.tscn" id="45_iaarh"]
+[ext_resource type="Script" path="res://src/entities/clown/stunt_manager.gd" id="45_ohg3c"]
 [ext_resource type="Script" path="res://src/ui/ui_widgets/ui_clown_widgets.gd" id="46_6abon"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0ywa"]
@@ -138,6 +140,34 @@ tracks/1/keys = {
 "values": ["monocycle"]
 }
 
+[sub_resource type="Animation" id="Animation_1vv3j"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/sprites/SpriteLower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/sprites/SpriteLower:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["stunt1"]
+}
+
 [sub_resource type="Animation" id="Animation_dl7i5"]
 resource_name = "walk"
 length = 0.8
@@ -172,7 +202,36 @@ _data = {
 "idle": SubResource("Animation_7ldqs"),
 "jump": SubResource("Animation_x5n3c"),
 "monocycle": SubResource("Animation_nl0d7"),
+"stunt1": SubResource("Animation_1vv3j"),
 "walk": SubResource("Animation_dl7i5")
+}
+
+[sub_resource type="Animation" id="Animation_lxfbb"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/SpriteUpper:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites/SpriteUpper:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["hidden"]
 }
 
 [sub_resource type="Animation" id="Animation_oy7pm"]
@@ -375,6 +434,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gjfrl"]
 _data = {
+"hidden": SubResource("Animation_lxfbb"),
 "idle": SubResource("Animation_oy7pm"),
 "idle_jiggle": SubResource("Animation_fy05y"),
 "jump": SubResource("Animation_pol3i"),
@@ -430,6 +490,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_fqvph")
+}],
+"loop": true,
+"name": &"stunt1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("10_vrk46")
 }, {
 "duration": 1.0,
@@ -448,6 +516,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sw55h"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"hidden",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("14_t6bpk")
@@ -662,6 +738,12 @@ script = ExtResource("9_mmxh3")
 
 [node name="TimerCake" type="Timer" parent="CakeController"]
 wait_time = 3.0
+
+[node name="StuntManager" type="Node3D" parent="."]
+script = ExtResource("45_ohg3c")
+
+[node name="TimerRecovery" type="Timer" parent="StuntManager"]
+wait_time = 2.0
 
 [node name="UiWidgets" parent="." instance=ExtResource("45_iaarh")]
 script = ExtResource("46_6abon")

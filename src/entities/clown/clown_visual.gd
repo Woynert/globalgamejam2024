@@ -42,11 +42,23 @@ func _physics_process(delta):
 			#sprite_low.flip_h = false
 			#sprite_up.flip_h = false
 	
+	# get other vars
+	
 	on_floor = clown.is_on_floor_shapecast()
 	on_rope = clown.node_rope.enabled
 	on_monocycle = clown.node_monocycle.enabled
 	doing_hand_trick = $"../Hand".doing_hand_trick
 	
+	# stunts
+	if clown.node_stunt_manager.enabled:
+		ani_player_up.play("hidden")
+		match clown.node_stunt_manager.variant:
+			0:
+				ani_player_low.play("stunt1")
+			1:
+				ani_player_low.play("stunt1")
+		return
+			
 	# apply
 	on_floor = on_floor || on_rope
 	

@@ -29,6 +29,8 @@ func is_action_hand_trick_pressed() -> bool:
 	return action_pressed
 
 func _physics_process(delta):
+	if $"../StuntManager".enabled:
+		return
 	if !doing_hand_trick:
 		if is_action_hand_trick_pressed() && has_item:
 			doing_hand_trick = true

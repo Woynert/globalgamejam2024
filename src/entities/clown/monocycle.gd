@@ -82,6 +82,9 @@ func fail():
 	var manager_request = SharedRes.manager_request as ManagerRequest
 	manager_request.submit_failure(TRICKS.VAR.MONOCYCLE)
 	
+	var node: Clown = get_parent()
+	node.node_stunt_manager.enable(StuntManager.STUNT.FALL)
+	
 	# TODO: If you fail the monocycle on the rope you fail the rope as well
 
 func unmount():
