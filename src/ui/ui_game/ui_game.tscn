@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://celvba4tj13tj"]
+[gd_scene load_steps=11 format=3 uid="uid://celvba4tj13tj"]
 
 [ext_resource type="Script" path="res://src/ui/ui_game/ui_game.gd" id="1_xs0ex"]
 [ext_resource type="PackedScene" uid="uid://cu633fka3un4w" path="res://src/ui/ui_bar.tscn" id="2_648ng"]
-[ext_resource type="Script" path="res://src/ui/ui_game/BubbleManager.gd" id="3_dgka0"]
+[ext_resource type="Script" path="res://src/ui/ui_game/bubble_manager.gd" id="2_xl8dh"]
 [ext_resource type="Texture2D" uid="uid://bt0t2vcdaxtjv" path="res://resource_remote/symbol/globe.png" id="3_v7xme"]
 [ext_resource type="Script" path="res://src/ui/ui_game/Bubble.gd" id="4_k414w"]
 [ext_resource type="Texture2D" uid="uid://cvdynlrmidl22" path="res://resource_remote/Baston.png" id="6_egf1d"]
+[ext_resource type="Script" path="res://src/ui/ui_game/emoji_manager.gd" id="6_ik0gk"]
 [ext_resource type="Texture2D" uid="uid://bn7rnc0v4biii" path="res://resource_remote/symbol/heart.png" id="7_m2mrr"]
 [ext_resource type="Texture2D" uid="uid://cdley7myi83wf" path="res://resource_remote/symbol/exp.png" id="8_fjcx1"]
 [ext_resource type="Texture2D" uid="uid://vofxljbin4c4" path="res://resource_remote/symbol/money.png" id="9_q88ax"]
@@ -20,6 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_xs0ex")
 
 [node name="LabelMoney" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 585.0
 offset_top = 83.0
@@ -28,6 +30,7 @@ offset_bottom = 106.0
 text = "Money: 10"
 
 [node name="LabelExperience" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 585.0
 offset_top = 109.0
@@ -36,6 +39,7 @@ offset_bottom = 132.0
 text = "Exp: 10"
 
 [node name="LabelRequest" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 586.0
 offset_top = 135.0
@@ -54,7 +58,7 @@ offset_left = -353.0
 offset_top = -119.0
 grow_horizontal = 0
 grow_vertical = 0
-script = ExtResource("3_dgka0")
+script = ExtResource("2_xl8dh")
 
 [node name="Bubble" type="Control" parent="BubbleManager"]
 anchors_preset = 0
@@ -221,3 +225,33 @@ text = "1:00"
 [node name="LabelDay" type="Label" parent="DayInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Day X"
+
+[node name="EmojiManagerContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="EmojiManagerContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EmojiManager" type="Control" parent="EmojiManagerContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_ik0gk")
+
+[node name="TimerEmoji" type="Timer" parent="EmojiManagerContainer/Control/EmojiManager"]
+autostart = true
+
+[node name="Control2" type="Control" parent="EmojiManagerContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

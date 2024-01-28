@@ -9,6 +9,19 @@ enum AUDIO {
 	LOOP_CIRCUS_AMBIENT_PLAYFUL,
 	LOOP_CIRCUS_AMBIENT_TIBURONES,
 	LOOP_CIRCUS_AMBIENT_TROMPETA, # Escena trompeta circus
+	APLAUSO_DIARIO_1,
+	APLAUSO_DIARIO_2,
+	APLAUSO_GRUPAL,
+	APLAUSA_SARCASTICO,
+	NOSE_HONK,
+	NOSE_HONK_2,
+	THROW,
+	TAKE_ITEM,
+	CANON_EXPLOSION,
+	CAKE_ON_FACE,
+	BUU_1,
+	BUU_2,
+	LONG_FALL,
 }
 
 var AUDIO_PATH = {
@@ -18,7 +31,22 @@ var AUDIO_PATH = {
 	AUDIO.LOOP_CIRCUS_AMBIENT_PLAYFUL: "res://resource_remote/audio/Escena Circus Playful.mp3",
 	AUDIO.LOOP_CIRCUS_AMBIENT_TIBURONES: "res://resource_remote/audio/Escena Circus Tiburones.mp3",
 	AUDIO.LOOP_CIRCUS_AMBIENT_TROMPETA: "res://resource_remote/audio/Escena Trompeta Circus.mp3",
+	AUDIO.APLAUSO_DIARIO_1: "res://resource_remote/audio/Aplauso diario 01.mp3",
+	AUDIO.APLAUSO_DIARIO_2: "res://resource_remote/audio/Aplauso diario 02.mp3",
+	AUDIO.APLAUSO_GRUPAL: "res://resource_remote/audio/Aplauso grupal.mp3",
+	AUDIO.APLAUSA_SARCASTICO: "res://resource_remote/audio/Aplauso Sarcastico.mp3",
+	AUDIO.NOSE_HONK: "res://resource_remote/audio/Nose Honk 01.mp3",
+	AUDIO.NOSE_HONK_2: "res://resource_remote/audio/Nose Honk 02.mp3",
+	AUDIO.THROW: "res://resource_remote/audio/Throw.mp3",
+	AUDIO.TAKE_ITEM: "res://resource_remote/audio/Tomar objetos.mp3",
+	AUDIO.CANON_EXPLOSION: "res://resource_remote/audio/Cannon explosion.mp3",
+	AUDIO.CAKE_ON_FACE: "res://resource_remote/audio/Cake on face.mp3",
+	AUDIO.BUU_1: "res://resource_remote/audio/Buu 01.mp3",
+	AUDIO.BUU_2: "res://resource_remote/audio/Buu 02.mp3",
+	AUDIO.LONG_FALL: "res://resource_remote/audio/Caida Alta.mp3"
 }
+
+
 
 func play_hit():
 	var stream = [
@@ -41,6 +69,7 @@ func play_pain():
 		load("res://resource_remote/audio/Dolor 4.mp3"),
 		load("res://resource_remote/audio/Dolor 5.mp3"),
 		load("res://resource_remote/audio/Dolor 6.mp3"),
+		load("res://resource_remote/audio/Caida Alta.mp3"),
 	].pick_random()
 	play_raw_stream(stream)
 
@@ -64,5 +93,7 @@ func play_stream_loop(AUDIO):
 		return
 	stream.loop = true
 	var player = $AudioStreamPlayer_loop
+	if player.stream == stream:
+		return
 	player.stream = stream
 	player.play()

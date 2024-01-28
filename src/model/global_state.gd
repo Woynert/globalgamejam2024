@@ -5,7 +5,7 @@ extends Node
 
 var experience: int = 0
 var health: int = 100
-var laugh: int = 50
+var laugh: int = 100
 var current_request: Array[int] = []
 
 # day related

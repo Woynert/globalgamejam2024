@@ -23,6 +23,8 @@ func _timer_shoot_timeout():
 		projectile.start(basis * direction)
 		print("Spawn %s" % projectile)
 		
+	SharedRes.get_manager_sound().play_stream(ManagerSound.AUDIO.CANON_EXPLOSION)
+	
 func start():
 	timer_shoot.start()
 	

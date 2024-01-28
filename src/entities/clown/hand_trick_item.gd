@@ -34,3 +34,4 @@ func launch():
 	position.y = starting_position
 	velocity_y = 10
 	rotation_dir = -rotation_dir
+	SharedRes.get_manager_sound().play_stream(ManagerSound.AUDIO.THROW)

@@ -16,3 +16,4 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	self.queue_free()
+	SharedRes.get_manager_sound().play_stream(ManagerSound.AUDIO.CAKE_ON_FACE)

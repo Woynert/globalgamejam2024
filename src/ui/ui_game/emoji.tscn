@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dij4w7re7lil6"]
+
+[ext_resource type="Texture2D" uid="uid://jy3wbusbsni1" path="res://resource_remote/Emoji Happy 04.png" id="1_kbsck"]
+[ext_resource type="Script" path="res://src/ui/ui_game/emoji.gd" id="1_r1dyg"]
+
+[node name="Emoji" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r1dyg")
+
+[node name="TextureRectShadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.278431)
+layout_mode = 0
+offset_left = 2.595
+offset_top = 3.37
+offset_right = 42.595
+offset_bottom = 43.37
+texture = ExtResource("1_kbsck")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kbsck")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TimerLive" type="Timer" parent="."]
+wait_time = 1.2
+
+[node name="TimerVanish" type="Timer" parent="."]

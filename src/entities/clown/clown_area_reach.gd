@@ -46,7 +46,6 @@ func _area_body_exited(body: Node3D):
 			if body.item == TRICKS.VAR.ROPE:
 				rope.end_rope()
 	elif body is CakePlayArea:
-		print("wawa")
 		if cake_controller.enabled:
 			cake_controller.stop()
 			
@@ -62,6 +61,7 @@ func _physics_process(delta):
 	if there_is_reachable_item:
 		if Input.is_action_just_pressed("game_pickup"):
 			print("Selected " + str(TRICKS.NAMES[item_in_reach]))
+			SharedRes.get_manager_sound().play_stream(ManagerSound.AUDIO.TAKE_ITEM)
 			if item_in_reach in TRICKS.HANDEABLE:
 				hand.set_item(item_in_reach)
 			elif item_in_reach == TRICKS.VAR.MONOCYCLE:

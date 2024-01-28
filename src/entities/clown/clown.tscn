@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=71 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://c7pj3pr8gh4hl" path="res://src/ui/ui_widgets/ui_widgets.tscn" id="45_iaarh"]
 [ext_resource type="Script" path="res://src/entities/clown/stunt_manager.gd" id="45_ohg3c"]
 [ext_resource type="Script" path="res://src/ui/ui_widgets/ui_clown_widgets.gd" id="46_6abon"]
+[ext_resource type="Script" path="res://src/entities/clown/clown_sound_helper.gd" id="50_m66ih"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0ywa"]
 radius = 0.47
@@ -785,3 +786,10 @@ wait_time = 2.0
 
 [node name="UiWidgets" parent="." instance=ExtResource("45_iaarh")]
 script = ExtResource("46_6abon")
+
+[node name="SoundHelper" type="Node" parent="."]
+script = ExtResource("50_m66ih")
+
+[node name="TimerAtention" type="Timer" parent="SoundHelper"]
+wait_time = 10.0
+autostart = true
