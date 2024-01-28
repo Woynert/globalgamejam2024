@@ -57,7 +57,7 @@ func _physics_process(delta):
 			0:
 				ani_player_low.play("stunt1")
 			1:
-				ani_player_low.play("stunt1")
+				ani_player_low.play("stunt2")
 		return
 			
 	# apply

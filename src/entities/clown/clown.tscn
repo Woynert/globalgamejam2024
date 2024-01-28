@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ckm02g7nsya7l"]
+[gd_scene load_steps=70 format=3 uid="uid://ckm02g7nsya7l"]
 
 [ext_resource type="Script" path="res://src/entities/clown/clown.gd" id="1_wnvl0"]
 [ext_resource type="Script" path="res://src/entities/clown/clown_area_reach.gd" id="2_bbna4"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c4nfua21e7w23" path="res://resource_remote/Plin walk 03.png" id="12_hbeoy"]
 [ext_resource type="Texture2D" uid="uid://c8r7j2ceit04l" path="res://resource_remote/Plin monociclo 04.png" id="12_qqwop"]
 [ext_resource type="Texture2D" uid="uid://bqa3mhiwtroln" path="res://resource_remote/Plin walk 04.png" id="13_roldu"]
+[ext_resource type="Texture2D" uid="uid://gwujnjhflfyj" path="res://resource_remote/Plin ouch.png" id="14_8n14b"]
 [ext_resource type="Texture2D" uid="uid://bc00heyl3absf" path="res://resource_remote/Plin Idle Brazos 01.png" id="14_t6bpk"]
 [ext_resource type="Texture2D" uid="uid://cpk8awh2ku8ao" path="res://resource_remote/Plin Idle Brazos 02.png" id="15_tb580"]
 [ext_resource type="Texture2D" uid="uid://bf4n2qxjvryh2" path="res://resource_remote/Plin Idle Brazos 03.png" id="16_d3ufp"]
@@ -168,6 +169,34 @@ tracks/1/keys = {
 "values": ["stunt1"]
 }
 
+[sub_resource type="Animation" id="Animation_5mhl8"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/sprites/SpriteLower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/sprites/SpriteLower:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["stunt2"]
+}
+
 [sub_resource type="Animation" id="Animation_dl7i5"]
 resource_name = "walk"
 length = 0.8
@@ -203,6 +232,7 @@ _data = {
 "jump": SubResource("Animation_x5n3c"),
 "monocycle": SubResource("Animation_nl0d7"),
 "stunt1": SubResource("Animation_1vv3j"),
+"stunt2": SubResource("Animation_5mhl8"),
 "walk": SubResource("Animation_dl7i5")
 }
 
@@ -498,6 +528,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("14_8n14b")
+}],
+"loop": true,
+"name": &"stunt2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("10_vrk46")
 }, {
 "duration": 1.0,
@@ -695,7 +733,7 @@ animation = &"idle"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97981, 0.1)
 flip_h = true
 sprite_frames = SubResource("SpriteFrames_sw55h")
-animation = &"idle"
+animation = &"hidden"
 
 [node name="Hand" type="Node3D" parent="."]
 script = ExtResource("2_s7awb")

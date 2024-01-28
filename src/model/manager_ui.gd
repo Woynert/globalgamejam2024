@@ -11,7 +11,7 @@ enum MENU {
 }
 
 @onready var MENU_NODES = {
-	MENU.MAIN: null,
+	MENU.MAIN: preload("res://src/ui/ui_main.tscn"),
 	MENU.SETTINGS: null,
 	MENU.DAY_RESUME: preload("res://src/ui/ui_day_resume.tscn"),
 	MENU.GAME: preload("res://src/ui/ui_game.tscn"),

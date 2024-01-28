@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5vs8o8ecg4yx"]
+
+[ext_resource type="Script" path="res://src/ui/ui_main.gd" id="1_46dos"]
+[ext_resource type="Texture2D" uid="uid://feujb7yjl4m" path="res://resource_remote/Pantalla de inicio.png" id="1_wc5og"]
+[ext_resource type="Texture2D" uid="uid://b0agdpbqlkfhl" path="res://resource_remote/Pantalla de inicio BOTON.png" id="2_sb1qt"]
+[ext_resource type="Script" path="res://src/ui/MyBtnTexture.gd" id="3_jis1s"]
+[ext_resource type="FontVariation" uid="uid://dvjug5rs2dx1d" path="res://resources/fonts/main_menu.tres" id="3_nxe4n"]
+
+[node name="UiMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_46dos")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wc5og")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="BtnPlay" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 87.0
+offset_top = 178.0
+offset_right = 239.0
+offset_bottom = 235.0
+script = ExtResource("3_jis1s")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BtnPlay"]
+modulate = Color(1, 0.552941, 1, 1)
+layout_mode = 0
+offset_left = -77.0
+offset_top = -96.0
+offset_right = 518.556
+offset_bottom = 239.0
+mouse_filter = 2
+texture = ExtResource("2_sb1qt")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="BtnPlay"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 7.0
+offset_right = 112.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nxe4n")
+theme_override_font_sizes/font_size = 31
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnQuit" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 88.0
+offset_top = 256.0
+offset_right = 240.0
+offset_bottom = 313.0
+script = ExtResource("3_jis1s")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BtnQuit"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -96.0
+offset_right = 518.556
+offset_bottom = 239.0
+texture = ExtResource("2_sb1qt")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="BtnQuit"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 7.0
+offset_right = 112.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nxe4n")
+theme_override_font_sizes/font_size = 31
+text = "QUIT"
+horizontal_alignment = 1
+vertical_alignment = 1

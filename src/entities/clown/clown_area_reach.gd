@@ -55,8 +55,8 @@ func _area_area_entered(area: Node3D):
 		if cake_controller.enabled:
 			cake_controller.fail()
 			area.queue_free()
-			#var clown = get_parent()
-			#clown.node_stunt_manager.enable(StuntManager.STUNT.HEADACHE)
+			var clown = get_parent()
+			clown.node_stunt_manager.enable(StuntManager.STUNT.HEADACHE)
 
 func _physics_process(delta):
 	if there_is_reachable_item:
