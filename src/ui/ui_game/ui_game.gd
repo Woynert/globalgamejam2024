@@ -21,26 +21,28 @@ func _physics_process(delta):
 # setters
 
 func set_value_health(value):
-	($UiBarHealth as UiBar).set_bar_value(value)
+	($Bar/VBoxContainer/Grid/InfoHealth as UiBar).set_value(value)
 
 func set_value_laugh(value):
-	($UiBarLaugh as UiBar).set_bar_value(value)
+	pass # TODO: EMOJIS
 
 func set_value_experience(value):
-	($LabelExperience as Label).text = str("Exp: %d" % value)
+	#($LabelExperience as Label).text = str("Exp: %d" % value)
+	($Bar/VBoxContainer/Grid/InfoExp as UiBar).set_value(value)
 
 func set_value_money(value):
-	($LabelMoney as Label).text = str("Money: %d (+%d/sec)" % [value, GlobalState.money_per_second])
+	#($LabelMoney as Label).text = str("Money: %d (+%d/sec)" % [value, GlobalState.money_per_second])
+	($Bar/VBoxContainer/Grid/InfoMoney as UiBar).set_value(str("Money: %d (+%d/sec)" % [value, GlobalState.money_per_second]))
 
 func set_current_reequest(request: Array[int]):
-	var text = ""
-	for req in request:
-		text += "%s\n" % TRICKS.NAMES[req]
-	($LabelRequest as Label).text = str("Requests:\n%s" % text)
+	#var text = ""
+	#for req in request:
+	#	text += "%s\n" % TRICKS.NAMES[req]
+	#($LabelRequest as Label).text = str("Requests:\n%s" % text)
 	$BubbleManager.update_bubbles(request)
 	
 func update_timeleft ():
-	$LabelTime.text = str(int(SharedRes.get_manager_level().level_timer.time_left))
+	$DayInfo/MarginContainer/VBoxContainer/LabelTime.text = str(int(SharedRes.get_manager_level().level_timer.time_left))
 
 func update_day ():
-	$LabelDay.text = "Day %d" % GlobalState.day
+	$DayInfo/MarginContainer/VBoxContainer/LabelDay.text = "Day %d" % GlobalState.day

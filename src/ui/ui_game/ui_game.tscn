@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://celvba4tj13tj"]
+[gd_scene load_steps=10 format=3 uid="uid://celvba4tj13tj"]
 
 [ext_resource type="Script" path="res://src/ui/ui_game/ui_game.gd" id="1_xs0ex"]
 [ext_resource type="PackedScene" uid="uid://cu633fka3un4w" path="res://src/ui/ui_bar.tscn" id="2_648ng"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bt0t2vcdaxtjv" path="res://resource_remote/symbol/globe.png" id="3_v7xme"]
 [ext_resource type="Script" path="res://src/ui/ui_game/Bubble.gd" id="4_k414w"]
 [ext_resource type="Texture2D" uid="uid://cvdynlrmidl22" path="res://resource_remote/Baston.png" id="6_egf1d"]
+[ext_resource type="Texture2D" uid="uid://bn7rnc0v4biii" path="res://resource_remote/symbol/heart.png" id="7_m2mrr"]
+[ext_resource type="Texture2D" uid="uid://cdley7myi83wf" path="res://resource_remote/symbol/exp.png" id="8_fjcx1"]
+[ext_resource type="Texture2D" uid="uid://vofxljbin4c4" path="res://resource_remote/symbol/money.png" id="9_q88ax"]
 
 [node name="UiGame" type="Control"]
 layout_mode = 3
@@ -15,22 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xs0ex")
-
-[node name="UiBarHealth" parent="." instance=ExtResource("2_648ng")]
-layout_mode = 1
-offset_left = 583.0
-offset_top = 12.0
-offset_right = 781.0
-offset_bottom = 39.0
-label_text = "health"
-
-[node name="UiBarLaugh" parent="." instance=ExtResource("2_648ng")]
-layout_mode = 0
-offset_left = 583.0
-offset_top = 46.0
-offset_right = 781.0
-offset_bottom = 73.0
-label_text = "laugh"
 
 [node name="LabelMoney" type="Label" parent="."]
 layout_mode = 0
@@ -56,35 +43,25 @@ offset_right = 641.0
 offset_bottom = 158.0
 text = "Request: 1, 2"
 
-[node name="LabelTime" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "1:00"
-
-[node name="LabelDay" type="Label" parent="."]
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Day X"
-
 [node name="BubbleManager" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -353.0
+offset_top = -119.0
+grow_horizontal = 0
+grow_vertical = 0
 script = ExtResource("3_dgka0")
 
 [node name="Bubble" type="Control" parent="BubbleManager"]
 anchors_preset = 0
-offset_left = 675.0
-offset_top = 381.0
-offset_right = 810.0
-offset_bottom = 508.0
+offset_left = 231.0
+offset_top = 3.0
+offset_right = 366.0
+offset_bottom = 130.0
 script = ExtResource("4_k414w")
 metadata/_edit_group_ = true
 
@@ -108,10 +85,10 @@ stretch_mode = 4
 
 [node name="Bubble2" type="Control" parent="BubbleManager"]
 anchors_preset = 0
-offset_left = 561.0
-offset_top = 381.0
-offset_right = 696.0
-offset_bottom = 508.0
+offset_left = 117.0
+offset_top = 3.0
+offset_right = 252.0
+offset_bottom = 130.0
 script = ExtResource("4_k414w")
 metadata/_edit_group_ = true
 
@@ -135,10 +112,10 @@ stretch_mode = 4
 
 [node name="Bubble3" type="Control" parent="BubbleManager"]
 anchors_preset = 0
-offset_left = 448.0
-offset_top = 384.0
-offset_right = 583.0
-offset_bottom = 511.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 139.0
+offset_bottom = 133.0
 script = ExtResource("4_k414w")
 metadata/_edit_group_ = true
 
@@ -159,3 +136,88 @@ offset_bottom = 101.0
 texture = ExtResource("6_egf1d")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Bar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_right = 241.0
+offset_bottom = 47.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -2.0
+offset_right = 28.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Control" type="Control" parent="Bar/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bar/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="Bar/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+columns = 3
+
+[node name="InfoHealth" parent="Bar/VBoxContainer/Grid" instance=ExtResource("2_648ng")]
+layout_mode = 2
+size_flags_horizontal = 3
+image = ExtResource("7_m2mrr")
+
+[node name="InfoMoney" parent="Bar/VBoxContainer/Grid" instance=ExtResource("2_648ng")]
+layout_mode = 2
+size_flags_horizontal = 3
+image = ExtResource("9_q88ax")
+use_bar = false
+
+[node name="InfoExp" parent="Bar/VBoxContainer/Grid" instance=ExtResource("2_648ng")]
+layout_mode = 2
+size_flags_horizontal = 3
+image = ExtResource("8_fjcx1")
+use_bar = false
+
+[node name="DayInfo" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 77.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="DayInfo"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DayInfo/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelTime" type="Label" parent="DayInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "1:00"
+
+[node name="LabelDay" type="Label" parent="DayInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Day X"

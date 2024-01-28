@@ -1,19 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu633fka3un4w"]
+[gd_scene load_steps=3 format=3 uid="uid://cu633fka3un4w"]
 
 [ext_resource type="Script" path="res://src/ui/ui_bar.gd" id="1_o4rvi"]
+[ext_resource type="Texture2D" uid="uid://vofxljbin4c4" path="res://resource_remote/symbol/money.png" id="2_ocbpd"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 offset_right = 214.0
 offset_bottom = 27.0
 script = ExtResource("1_o4rvi")
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-size_flags_vertical = 1
-text = "test"
-vertical_alignment = 1
+texture = ExtResource("2_ocbpd")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 2
+text = "100"
