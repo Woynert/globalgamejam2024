@@ -9,8 +9,8 @@ var previous_pos_in_rope: float = 0
 var pos_in_rope_changed: bool = false
 
 # pin variables
-const ANGLE_INCREASE = 0.009
-const ANGLE_TO_FAIL = 70 # degrees
+const ANGLE_INCREASE = 0.008
+const ANGLE_TO_FAIL = 60 # degrees
 
 var pin_direction: Vector3 = Vector3.UP
 

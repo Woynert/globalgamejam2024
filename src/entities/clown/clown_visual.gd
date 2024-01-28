@@ -51,6 +51,7 @@ func _physics_process(delta):
 	
 	# stunts
 	if clown.node_stunt_manager.enabled:
+		$sprites.rotation.x = 0
 		ani_player_up.play("hidden")
 		match clown.node_stunt_manager.variant:
 			0:

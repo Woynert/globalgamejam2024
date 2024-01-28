@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c34w8f8vwefhc"]
+[gd_scene load_steps=7 format=3 uid="uid://c34w8f8vwefhc"]
 
 [ext_resource type="Script" path="res://src/entities/elevator/elevator.gd" id="1_2vhcd"]
+[ext_resource type="PackedScene" uid="uid://ceawowd2iyt7c" path="res://resources/models/elevator.blend" id="2_d7lst"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivtci"]
 size = Vector3(1.99646, 6.50119, 1.72888)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6kmhq"]
-size = Vector3(0.133484, 0.682495, 1.70188)
+size = Vector3(0.133484, 0.682495, 2.08258)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8n4jp"]
-size = Vector3(1.95629, 0.682495, 0.131524)
+size = Vector3(2.05725, 0.682495, 0.131524)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5ufn"]
 size = Vector3(1.41422, 0.623047, 1.19052)
@@ -22,11 +23,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0432606, -3.24913, -0.09405
 shape = SubResource("BoxShape3D_ivtci")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970666, 0.330993, -0.0891132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970666, 0.330993, -0.0133365)
 shape = SubResource("BoxShape3D_6kmhq")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036576, 0.330993, -0.879932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139023, 0.330993, -0.964108)
 shape = SubResource("BoxShape3D_8n4jp")
 
 [node name="AreaActivate" type="Area3D" parent="."]
@@ -38,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172192, 0.258057, -0.199937
 shape = SubResource("BoxShape3D_y5ufn")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0464478, 0.287827, -0.0986633)
@@ -47,3 +49,6 @@ size = Vector3(2.0011, 0.727325, 1.7453)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0579014, 0.323737, 0.0257254)
 operation = 2
 size = Vector3(1.90278, 0.655504, 1.67682)
+
+[node name="elevator" parent="." instance=ExtResource("2_d7lst")]
+transform = Transform3D(-1.04372e-08, 0, -0.238775, 0, 0.238775, 0, 0.238775, 0, -1.04372e-08, 0, 0, 0)
