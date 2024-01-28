@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cuirefnwq71uj"
+path="res://.godot/imported/Aplauso diario 02.mp3-436db80fcd7960b06fe75feeef67807c.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Aplauso diario 02.mp3"
+dest_files=["res://.godot/imported/Aplauso diario 02.mp3-436db80fcd7960b06fe75feeef67807c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

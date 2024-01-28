@@ -22,6 +22,10 @@ func enable(p_variant: int):
 	enabled = true
 	$TimerRecovery.timeout.connect(_timer_recovery_timeout)
 	$TimerRecovery.start()
+	
+	# play sound
+	
+	SharedRes.manager_sound.play_pain()
 
 func _timer_recovery_timeout():
 	enabled = false

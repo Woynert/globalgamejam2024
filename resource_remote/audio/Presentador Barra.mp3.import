@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bndu5fp12fges"
+path="res://.godot/imported/Presentador Barra.mp3-1ec580597f5be239e103aed338d9f003.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Presentador Barra.mp3"
+dest_files=["res://.godot/imported/Presentador Barra.mp3-1ec580597f5be239e103aed338d9f003.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

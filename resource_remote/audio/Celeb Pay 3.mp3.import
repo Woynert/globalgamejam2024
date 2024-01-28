@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfw57xfhnmkq3"
+path="res://.godot/imported/Celeb Pay 3.mp3-9233c06c0ac7fea155477f0b51db9080.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Celeb Pay 3.mp3"
+dest_files=["res://.godot/imported/Celeb Pay 3.mp3-9233c06c0ac7fea155477f0b51db9080.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

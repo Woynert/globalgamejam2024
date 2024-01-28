@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhc7i13tk37r6"
+path="res://.godot/imported/Aplauso Sarcastico.mp3-b50fda19a538946edfcfbfefbe9742d7.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Aplauso Sarcastico.mp3"
+dest_files=["res://.godot/imported/Aplauso Sarcastico.mp3-b50fda19a538946edfcfbfefbe9742d7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

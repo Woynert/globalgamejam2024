@@ -13,6 +13,7 @@ func move(delta: float, use_gravity: bool = true):
 			node.velocity.y = 0
 		if Input.is_action_just_pressed("ui_accept") and node.is_on_floor_shapecast():
 			node.velocity.y = JUMP_VELOCITY
+			SharedRes.get_manager_sound().play_hit()
 
 	var input_dir = Input.get_vector("game_left", "game_right", "game_up", "game_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

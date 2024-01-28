@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxawltbi823d6"
+path="res://.godot/imported/Final Triste Pobreza.mp3-0319af63084ebe6506b32139a2f6d17e.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Final Triste Pobreza.mp3"
+dest_files=["res://.godot/imported/Final Triste Pobreza.mp3-0319af63084ebe6506b32139a2f6d17e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

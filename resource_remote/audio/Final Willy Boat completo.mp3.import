@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bs17ocspy4id6"
+path="res://.godot/imported/Final Willy Boat completo.mp3-05b40705dd7bdb800eab24f40d1814f5.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Final Willy Boat completo.mp3"
+dest_files=["res://.godot/imported/Final Willy Boat completo.mp3-05b40705dd7bdb800eab24f40d1814f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

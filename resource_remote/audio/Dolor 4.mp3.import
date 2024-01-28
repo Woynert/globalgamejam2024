@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqpa572es2sro"
+path="res://.godot/imported/Dolor 4.mp3-bd7142fb244100ae35931bfdd8038bce.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Dolor 4.mp3"
+dest_files=["res://.godot/imported/Dolor 4.mp3-bd7142fb244100ae35931bfdd8038bce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcdqm3lsb2brs"]
+[gd_scene load_steps=9 format=3 uid="uid://bcdqm3lsb2brs"]
 
 [ext_resource type="Script" path="res://src/level/root.gd" id="1_7rjcc"]
 [ext_resource type="Script" path="res://src/model/manager_level.gd" id="2_xdbrb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_eq0lf"]
 [ext_resource type="Script" path="res://src/model/manager_ui.gd" id="4_hmnwa"]
 [ext_resource type="Script" path="res://src/level/ManagerSound.gd" id="5_7fgav"]
+[ext_resource type="Script" path="res://src/level/sound_get_one_shot.gd" id="6_jyv1p"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_7rjcc")
@@ -22,7 +23,18 @@ script = ExtResource("3_epid0")
 [node name="ManagerSound" type="Node" parent="."]
 script = ExtResource("5_7fgav")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ManagerSound"]
+[node name="AudioStreamPlayer_loop" type="AudioStreamPlayer" parent="ManagerSound"]
+
+[node name="one_shot" type="Node" parent="ManagerSound"]
+script = ExtResource("6_jyv1p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ManagerSound/one_shot"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ManagerSound/one_shot"]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="ManagerSound/one_shot"]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="ManagerSound/one_shot"]
 
 [node name="ManagerLevel" type="Node" parent="."]
 script = ExtResource("2_xdbrb")

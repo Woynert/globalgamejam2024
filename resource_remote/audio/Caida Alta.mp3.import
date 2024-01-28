@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://20cb2k1n13v4"
+path="res://.godot/imported/Caida Alta.mp3-893439db119d8a8b2b2ddbeacab838dc.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Caida Alta.mp3"
+dest_files=["res://.godot/imported/Caida Alta.mp3-893439db119d8a8b2b2ddbeacab838dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

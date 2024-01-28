@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dafcrsdyetvwn"]
+[gd_scene load_steps=18 format=3 uid="uid://dafcrsdyetvwn"]
 
 [ext_resource type="Script" path="res://src/level/level_pilot.gd" id="1_8mpsg"]
 [ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown/clown.tscn" id="1_luuoo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_wbld2"]
 [ext_resource type="Script" path="res://src/util/debug_keys.gd" id="4_ddw3g"]
 [ext_resource type="PackedScene" uid="uid://qep4ro6o4wjg" path="res://resources/models/level_alpha.blend" id="4_tjuym"]
+[ext_resource type="Script" path="res://resources/models/level_hide_walls.gd" id="5_rkdug"]
 [ext_resource type="PackedScene" uid="uid://c34w8f8vwefhc" path="res://src/entities/elevator/elevator.tscn" id="6_5ka5h"]
 [ext_resource type="PackedScene" uid="uid://dnaoqvp2rx64l" path="res://src/entities/rope/Rope.tscn" id="7_ve0q6"]
 [ext_resource type="PackedScene" uid="uid://d2bm8hq0enmaw" path="res://src/entities/cake/cake.tscn" id="8_6ejyo"]
@@ -65,6 +66,7 @@ visible = false
 light_indirect_energy = 6.106
 
 [node name="level_alpha" parent="visual" instance=ExtResource("4_tjuym")]
+script = ExtResource("5_rkdug")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="visual"]
 environment = SubResource("Environment_r0xjk")

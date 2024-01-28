@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6dte1tfrv6vl"
+path="res://.godot/imported/Muerte 02.mp3-137eb758924fbe6c05b4153249fdae7d.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Muerte 02.mp3"
+dest_files=["res://.godot/imported/Muerte 02.mp3-137eb758924fbe6c05b4153249fdae7d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

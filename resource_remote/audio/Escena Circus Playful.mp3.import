@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmvfcrkjg0asv"
+path="res://.godot/imported/Escena Circus Playful.mp3-f03ab737b88cf74c9dd7d05e0c4559cf.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Escena Circus Playful.mp3"
+dest_files=["res://.godot/imported/Escena Circus Playful.mp3-f03ab737b88cf74c9dd7d05e0c4559cf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

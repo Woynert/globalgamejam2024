@@ -27,6 +27,7 @@ func _timer_rope_timeout():
 func start_rope(rope: Rope):
 	enabled = true
 	node_rope = rope
+	SharedRes.get_manager_sound().play_stream_loop(ManagerSound.AUDIO.LOOP_CIRCUS_AMBIENT_CUERDA)
 
 func end_rope():
 	enabled = false

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckee6hxqk3hcr"
+path="res://.godot/imported/Effect Bored 01.mp3-1b0e4434035af510b095123a652b2aec.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Effect Bored 01.mp3"
+dest_files=["res://.godot/imported/Effect Bored 01.mp3-1b0e4434035af510b095123a652b2aec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

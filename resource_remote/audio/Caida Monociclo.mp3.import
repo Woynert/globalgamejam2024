@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://diehgfem5dot1"
+path="res://.godot/imported/Caida Monociclo.mp3-cd70f4cce2c10fc9936ac202eca652a6.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Caida Monociclo.mp3"
+dest_files=["res://.godot/imported/Caida Monociclo.mp3-cd70f4cce2c10fc9936ac202eca652a6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

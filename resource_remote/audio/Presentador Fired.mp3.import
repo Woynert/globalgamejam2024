@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cr7v3v4xdq88y"
+path="res://.godot/imported/Presentador Fired.mp3-cc1f8bff12a226fdc68d150790261bdc.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/Presentador Fired.mp3"
+dest_files=["res://.godot/imported/Presentador Fired.mp3-cc1f8bff12a226fdc68d150790261bdc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
