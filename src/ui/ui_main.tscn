@@ -60,12 +60,45 @@ text = "PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BtnCredits" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 88.0
+offset_top = 273.0
+offset_right = 240.0
+offset_bottom = 330.0
+script = ExtResource("3_jis1s")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BtnCredits"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -96.0
+offset_right = 518.556
+offset_bottom = 239.0
+texture = ExtResource("2_sb1qt")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="BtnCredits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nxe4n")
+theme_override_font_sizes/font_size = 28
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BtnQuit" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 88.0
-offset_top = 256.0
+offset_top = 367.0
 offset_right = 240.0
-offset_bottom = 313.0
+offset_bottom = 424.0
 script = ExtResource("3_jis1s")
 metadata/_edit_group_ = true
 

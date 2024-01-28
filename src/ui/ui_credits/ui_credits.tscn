@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://vjl74y0jvdjj"]
+
+[ext_resource type="Texture2D" uid="uid://fhwvdqisf6f3" path="res://resource_remote/Creditos fondo.png" id="1_di46x"]
+[ext_resource type="Script" path="res://src/ui/ui_credits/ui_credits.gd" id="1_h3ufj"]
+[ext_resource type="Texture2D" uid="uid://b1nft1gmuio3o" path="res://resource_remote/Creditos Cortinas.png" id="2_f38a1"]
+[ext_resource type="Texture2D" uid="uid://hs5yt6uljrpc" path="res://resource_remote/Creditos Cortinas 2.png" id="3_q7wce"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3glf"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttgc3"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(1, 1, 1, 0.345098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="UiCredits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3ufj")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_di46x")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Overlay" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_q7wce")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlay"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 165.0
+offset_right = 531.0
+offset_bottom = 545.0
+text = "Laugh Equilibrium
+(GlobalGameJam2024)
+
+Whayner Porras (woynert)
+Samual Martinez
+Diego Perez
+Francisco Sanabria
+Alejandro Perez
+
+https://github.com/Woynert/globalgamejam2024/"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f38a1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 72.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3glf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ttgc3")
+text = "Return"

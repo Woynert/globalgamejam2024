@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcdqm3lsb2brs"]
+[gd_scene load_steps=10 format=3 uid="uid://bcdqm3lsb2brs"]
 
 [ext_resource type="Script" path="res://src/level/root.gd" id="1_7rjcc"]
 [ext_resource type="Script" path="res://src/model/manager_level.gd" id="2_xdbrb"]
 [ext_resource type="Script" path="res://src/util/debug_keys.gd" id="3_3tsrq"]
 [ext_resource type="Script" path="res://src/model/manager_events.gd" id="3_epid0"]
-[ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_eq0lf"]
+[ext_resource type="Script" path="res://src/model/manager_request.gd" id="4_codbd"]
 [ext_resource type="Script" path="res://src/model/manager_ui.gd" id="4_hmnwa"]
-[ext_resource type="Script" path="res://src/level/ManagerSound.gd" id="5_7fgav"]
+[ext_resource type="Script" path="res://src/model/ManagerSound.gd" id="5_7fgav"]
 [ext_resource type="Script" path="res://src/level/sound_get_one_shot.gd" id="6_jyv1p"]
+[ext_resource type="Script" path="res://src/model/manager_money.gd" id="8_kdgwi"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_7rjcc")
@@ -18,7 +19,13 @@ script = ExtResource("3_3tsrq")
 [node name="ManagerEvents" type="Node" parent="."]
 script = ExtResource("3_epid0")
 
-[node name="ManagerRequest" parent="." instance=ExtResource("3_eq0lf")]
+[node name="ManagerRequest" type="Node" parent="."]
+script = ExtResource("4_codbd")
+
+[node name="TimerRequest" type="Timer" parent="ManagerRequest"]
+wait_time = 15.0
+
+[node name="TimerPublicReview" type="Timer" parent="ManagerRequest"]
 
 [node name="ManagerSound" type="Node" parent="."]
 script = ExtResource("5_7fgav")
@@ -43,6 +50,12 @@ script = ExtResource("2_xdbrb")
 wait_time = 60.0
 
 [node name="LevelRoot" type="Node3D" parent="ManagerLevel"]
+
+[node name="ManagerMoney" type="Node" parent="."]
+script = ExtResource("8_kdgwi")
+
+[node name="TimerEarn" type="Timer" parent="ManagerMoney"]
+wait_time = 2.0
 
 [node name="ManagerUI" type="Control" parent="."]
 layout_mode = 3

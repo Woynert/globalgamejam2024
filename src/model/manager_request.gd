@@ -11,9 +11,6 @@ var BOREDOM_RATE = 3
 var LAUGH_VALUE = 30
 var FAIL_PENALTY = 10
 
-const MAX_COIN_PER_SECOND = 30
-var coins_per_second = 0
-
 func _ready():
 	timer_request.timeout.connect(_timer_request_timeout)
 	timer_public_review.timeout.connect(_timer_public_review_timeout)
@@ -31,11 +28,6 @@ func _timer_request_timeout():
 	
 func _timer_public_review_timeout():
 	GlobalState.set_laugh(GlobalState.laugh - BOREDOM_RATE)
-	earn_money()
-	
-func earn_money():
-	GlobalState.money_per_second = (GlobalState.laugh / 100.0) * MAX_COIN_PER_SECOND
-	GlobalState.savings += GlobalState.money_per_second
 
 func submit_trick(trick: int):
 	var satisfaction: float = 1.0 / GlobalState.current_request.size()

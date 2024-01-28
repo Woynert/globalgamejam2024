@@ -8,6 +8,10 @@ enum MENU {
 	GAME,
 	GAME_PAUSE,
 	GAME_INFO,
+	MESSAGE,
+	CREDITS,
+	GAMEOVER,
+	WIN,
 }
 
 @onready var MENU_NODES = {
@@ -17,6 +21,10 @@ enum MENU {
 	MENU.GAME: preload("res://src/ui/ui_game/ui_game.tscn"),
 	MENU.GAME_PAUSE: null,
 	MENU.GAME_INFO: null,
+	MENU.MESSAGE: preload("res://src/ui/ui_message/ui_message.tscn"),
+	MENU.CREDITS: preload("res://src/ui/ui_credits/ui_credits.tscn"),
+	MENU.GAMEOVER: preload("res://src/ui/ui_message/ui_gameover.tscn"),
+	MENU.WIN: preload("res://src/ui/ui_message/ui_win.tscn"),
 }
 
 func unload_all ():
@@ -37,3 +45,6 @@ func spawn_menu (menu: MENU) -> Node:
 		printerr("E: Couldn't find scene for menu %d" % menu)
 		return null
 	return scene.instantiate()
+
+func get_current_menu () -> Node:
+	return get_children()[0]

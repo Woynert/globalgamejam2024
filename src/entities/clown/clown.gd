@@ -6,6 +6,9 @@ class_name Clown
 @onready var node_rope = $Rope
 @onready var node_stunt_manager = $StuntManager
 
+func _ready():
+	set_billiboard_text("")
+
 func _physics_process(delta):
 	if node_stunt_manager.enabled:
 		node_stunt_manager.move(delta)
@@ -21,3 +24,6 @@ func _physics_process(delta):
 	
 func is_on_floor_shapecast() -> bool:
 	return ($ShapeCast3D as ShapeCast3D).is_colliding()
+
+func set_billiboard_text(text: String):
+	$TextBilliboard.text = text

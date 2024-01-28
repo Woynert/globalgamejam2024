@@ -184,6 +184,7 @@ theme_override_constants/h_separation = 15
 columns = 3
 
 [node name="InfoHealth" parent="Bar/VBoxContainer/Grid" instance=ExtResource("2_648ng")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 image = ExtResource("7_m2mrr")

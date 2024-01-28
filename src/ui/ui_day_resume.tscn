@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6o25wlc2c0p8"]
+[gd_scene load_steps=4 format=3 uid="uid://b6o25wlc2c0p8"]
 
 [ext_resource type="Script" path="res://src/ui/ui_day_resume.gd" id="1_x843y"]
+[ext_resource type="Texture2D" uid="uid://cm2835hxht2j8" path="res://resources/textures/Madera 01.png" id="2_6txuq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmbw3"]
 bg_color = Color(1, 1, 1, 1)
@@ -14,6 +15,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x843y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6txuq")
+expand_mode = 4
+stretch_mode = 6
 
 [node name="template" type="Control" parent="."]
 anchors_preset = 0
@@ -35,7 +49,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Hello there"
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -44,11 +58,10 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
+theme_override_constants/margin_top = 0
 
 [node name="LabelDay" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 2
 text = "Day 3"
 
 [node name="Control2" type="Control" parent="."]
@@ -76,7 +89,7 @@ theme_override_constants/separation = 10
 
 [node name="GridPayment" type="GridContainer" parent="Control2/VBoxContainer"]
 layout_mode = 2
-columns = 3
+columns = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="Control2/VBoxContainer"]
 custom_minimum_size = Vector2(0, 2)
@@ -85,27 +98,22 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cmbw3")
 
 [node name="GridRest" type="GridContainer" parent="Control2/VBoxContainer"]
 layout_mode = 2
-columns = 3
+columns = 4
 
-[node name="Control3" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="ButtonNext" type="Button" parent="Control3"]
+[node name="Control3" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -47.0
+offset_left = -38.5
 offset_top = -31.0
-offset_right = 47.0
+offset_right = 38.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ButtonNext" type="Button" parent="Control3"]
+layout_mode = 2
 text = "Next day"

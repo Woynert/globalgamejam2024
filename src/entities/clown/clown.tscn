@@ -700,10 +700,9 @@ shape = SubResource("SphereShape3D_t1t02")
 
 [node name="TextBilliboard" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3601, 0)
-pixel_size = 0.002
+pixel_size = 0.0075
 billboard = 1
 no_depth_test = true
-fixed_size = true
 text = "Text (testing)"
 
 [node name="Visual" type="Node3D" parent="."]

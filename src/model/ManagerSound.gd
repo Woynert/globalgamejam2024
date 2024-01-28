@@ -22,6 +22,7 @@ enum AUDIO {
 	BUU_1,
 	BUU_2,
 	LONG_FALL,
+	KACHIN,
 }
 
 var AUDIO_PATH = {
@@ -43,7 +44,8 @@ var AUDIO_PATH = {
 	AUDIO.CAKE_ON_FACE: "res://resource_remote/audio/Cake on face.mp3",
 	AUDIO.BUU_1: "res://resource_remote/audio/Buu 01.mp3",
 	AUDIO.BUU_2: "res://resource_remote/audio/Buu 02.mp3",
-	AUDIO.LONG_FALL: "res://resource_remote/audio/Caida Alta.mp3"
+	AUDIO.LONG_FALL: "res://resource_remote/audio/Caida Alta.mp3",
+	AUDIO.KACHIN: "res://resource_remote/audio/Ka-ching.mp3",
 }
 
 
@@ -97,3 +99,7 @@ func play_stream_loop(AUDIO):
 		return
 	player.stream = stream
 	player.play()
+
+func stop_loop():
+	var player = $AudioStreamPlayer_loop
+	player.stop()

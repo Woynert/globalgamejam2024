@@ -1,9 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://dafcrsdyetvwn"]
+[gd_scene load_steps=19 format=3 uid="uid://dafcrsdyetvwn"]
 
 [ext_resource type="Script" path="res://src/level/level_pilot.gd" id="1_8mpsg"]
 [ext_resource type="PackedScene" uid="uid://ckm02g7nsya7l" path="res://src/entities/clown/clown.tscn" id="1_luuoo"]
 [ext_resource type="PackedScene" uid="uid://byvu4kyjt73vr" path="res://src/entities/props/baston/baston.tscn" id="2_lumbh"]
-[ext_resource type="PackedScene" uid="uid://525ql3kbqbmw" path="res://src/model/manager_request.tscn" id="3_wbld2"]
+[ext_resource type="PackedScene" uid="uid://b2c620tyopr52" path="res://src/model/manager_request.tscn" id="3_wbld2"]
 [ext_resource type="Script" path="res://src/util/debug_keys.gd" id="4_ddw3g"]
 [ext_resource type="PackedScene" uid="uid://qep4ro6o4wjg" path="res://resources/models/level_alpha.blend" id="4_tjuym"]
 [ext_resource type="Script" path="res://resources/models/level_hide_walls.gd" id="5_rkdug"]
@@ -20,6 +20,9 @@ adjustment_brightness = 4.42
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8iuvp"]
 size = Vector3(8.53027, 0.258057, 0.890198)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2cw23"]
+size = Vector3(0.693848, 1, 4.19232)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a4m2d"]
 size = Vector3(7.56152, 3.36109, 5.53815)
@@ -144,8 +147,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0148, 4.60662, -10.2273)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.44749, 0, -8.82482)
 
 [node name="Cake" parent="entities/cake_shot" node_paths=PackedStringArray("canons") instance=ExtResource("8_6ejyo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46136, 0.454198, 0.0340815)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21752, 0.454198, 3.44178)
 canons = [NodePath("../canons/Canon"), NodePath("../canons/Canon2"), NodePath("../canons/Canon3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entities/cake_shot/Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39939, 0, -1.97586)
+shape = SubResource("BoxShape3D_2cw23")
 
 [node name="CakePlayArea" type="StaticBody3D" parent="entities/cake_shot"]
 collision_layer = 4

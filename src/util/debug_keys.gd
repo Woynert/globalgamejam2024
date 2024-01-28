@@ -14,8 +14,8 @@ func _physics_process(delta):
 		SharedRes.get_manager_events().event_finish_day()
 		
 	elif Input.is_action_just_pressed("debug_3"):
-		#SharedRes.get_manager_level().unload_level()
-		#SharedRes.get_manager_ui().unload_all()
-		#SharedRes.get_manager_ui().show_menu(ManagerUI.MENU.DAY_RESUME)
-		pass
+		SharedRes.get_manager_events().event_gameover()
+		
+	elif Input.is_action_just_pressed("debug_4"):
+		SharedRes.get_manager_events().event_win()
 

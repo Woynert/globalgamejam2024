@@ -11,10 +11,10 @@ enum VAR {
 }
 
 const NAMES = {
-	VAR.JUGGLE_BASTON: "Baston",
-	VAR.JUGGLE_ANTORCHA: "Antorcha",
-	VAR.JUGGLE_CUCHILLO: "Cuchillo",
-	VAR.MONOCYCLE: "Monocyclo",
+	VAR.JUGGLE_BASTON: "Baton",
+	VAR.JUGGLE_ANTORCHA: "Torch",
+	VAR.JUGGLE_CUCHILLO: "Axe",
+	VAR.MONOCYCLE: "Monocycle",
 	VAR.CAKE: "Cake Shots",
 	VAR.ROPE: "Tightrope",
 }

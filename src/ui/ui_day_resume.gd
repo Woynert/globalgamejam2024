@@ -30,7 +30,25 @@ func start():
 	label.text = "SAVINGS"
 	grid_payment.add_child(label)
 	label = label_template.duplicate()
-	label.text = "%d$" % GlobalState.savings
+	label.text = "+ %d$" % GlobalState.prev_savings
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	grid_payment.add_child(label)
+	label = label_template.duplicate()
+	label.text = ""
+	grid_payment.add_child(label)
+	label = label_template.duplicate()
+	label.text = ""
+	grid_payment.add_child(label)
+	
+	label = label_template.duplicate()
+	label.text = "DAY PROFIT"
+	grid_payment.add_child(label)
+	label = label_template.duplicate()
+	label.text = "+ %d$" % GlobalState.day_profit
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	grid_payment.add_child(label)
+	label = label_template.duplicate()
+	label.text = ""
 	grid_payment.add_child(label)
 	label = label_template.duplicate()
 	label.text = ""
@@ -41,7 +59,11 @@ func start():
 	label.text = "RENT"
 	grid_payment.add_child(label)
 	label = label_template.duplicate()
-	label.text = "-%d$" % GlobalState.cost_rent
+	label.text = "- %d$" % GlobalState.cost_rent
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	grid_payment.add_child(label)
+	label = label_template.duplicate()
+	label.text = ""
 	grid_payment.add_child(label)
 	button_pay_rent = button_template.duplicate()
 	button_pay_rent.text = "Pay"
@@ -53,7 +75,11 @@ func start():
 	label.text = "FOOD"
 	grid_payment.add_child(label)
 	label = label_template.duplicate()
-	label.text = "-%d$" % GlobalState.cost_food
+	label.text = "- %d$" % GlobalState.cost_food
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	grid_payment.add_child(label)
+	label = label_template.duplicate()
+	label.text = ""
 	grid_payment.add_child(label)
 	button_pay_food = button_template.duplicate()
 	button_pay_food.text = "Pay"
@@ -67,6 +93,7 @@ func start():
 	label = label_template.duplicate()
 	label_remaining = label
 	label.text = "%d$" % GlobalState.savings
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	grid_rest.add_child(label)
 	label = label_template.duplicate()
 	label.text = ""
@@ -93,14 +120,22 @@ func toggle_pay_food():
 	else:
 		button_pay_food.text = "Pay"
 	update_remaining()
+	SharedRes.get_manager_sound().play_stream(ManagerSound.AUDIO.KACHIN)
 	
-func toggle_pay_rent():
+func toggle_pay_rent ():
 	pay_rent = !pay_rent
 	if pay_rent:
 		button_pay_rent.text = "Remove"
 	else:
 		button_pay_rent.text = "Pay"
 	update_remaining()
+	SharedRes.get_manager_sound().play_stream(ManagerSound.AUDIO.KACHIN)
 
 func next_day ():
-	SharedRes.get_manager_events().event_next_level()
+	if !pay_rent:
+		SharedRes.get_manager_events().event_gameover()
+	else:
+		if GlobalState.day >= 3:
+			SharedRes.get_manager_events().event_win()
+		else:
+			SharedRes.get_manager_events().event_next_level()

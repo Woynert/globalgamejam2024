@@ -17,3 +17,4 @@ func _ready():
 			$visual/cuchillas.visible = true
 		TRICKS.VAR.MONOCYCLE:
 			$visual/monocycle.visible = true
+	print(item)

@@ -15,7 +15,7 @@ func _on_current_request_changed():
 func _physics_process(delta):
 	set_value_health(GlobalState.health)
 	set_value_laugh(GlobalState.laugh)
-	set_value_money(GlobalState.savings)
+	set_value_money(GlobalState.day_profit)
 	update_timeleft()
 
 # setters
