@@ -744,6 +744,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05238, 0)
 [node name="HandTrickLimitDown" type="Marker3D" parent="Hand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22308, 0)
 
+[node name="TimerRecentPickup" type="Timer" parent="Hand"]
+wait_time = 2.0
+one_shot = true
+
 [node name="WalkController" type="Node3D" parent="."]
 script = ExtResource("7_akx8q")
 

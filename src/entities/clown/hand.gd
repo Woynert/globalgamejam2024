@@ -3,6 +3,8 @@ class_name Hand
 
 var has_item: bool = false
 var item: TRICKS.VAR # only some items can be held in hand so beware
+var item_recently_picked_up: bool = false
+
 var doing_hand_trick: bool = false
 var hand_trick_phase: bool = false
 var hand_trick_usable: bool = false
@@ -12,12 +14,20 @@ var hand_trick_item: HandTrickItem = null
 @onready var hand_trick_limit_up: Node3D = $HandTrickLimitUp
 @onready var hand_trick_limit_down: Node3D = $HandTrickLimitDown
 
+func _ready():
+	$TimerRecentPickup.timeout.connect(_on_timer_recent_pickup)
+
+func _on_timer_recent_pickup():
+	item_recently_picked_up = false
+
 func unset_item():
 	has_item = false
 
 func set_item(p_item: TRICKS.VAR):
 	item = p_item
 	has_item = true
+	item_recently_picked_up = true
+	$TimerRecentPickup.start()
 
 func is_action_hand_trick_pressed() -> bool:
 	var action_pressed = false

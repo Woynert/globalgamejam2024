@@ -11,7 +11,7 @@ func _ready():
 	widget_monocycle.visible = false
 
 func _physics_process(delta):
-	if node_hand.doing_hand_trick:
+	if node_hand.doing_hand_trick || node_hand.item_recently_picked_up:
 		if node_hand.hand_trick_phase:
 			widget_mouse.set_button(1)
 		else:
