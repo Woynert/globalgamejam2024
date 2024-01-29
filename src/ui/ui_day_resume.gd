@@ -132,6 +132,9 @@ func toggle_pay_rent ():
 	SharedRes.get_manager_sound().play_stream(ManagerSound.AUDIO.KACHIN)
 
 func next_day ():
+	# pay up
+	GlobalState.savings = remaining
+	
 	if !pay_rent:
 		SharedRes.get_manager_events().event_gameover()
 	else:

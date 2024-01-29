@@ -12,7 +12,8 @@ var current_request: Array[int] = []
 
 var day: int = 1
 var day_duration: int = 60 # seconds
-var savings: int = 110
+var savings_initial_value: int = 50
+var savings: int = savings_initial_value
 var prev_savings: int = 110
 
 var day_profit: int = 0

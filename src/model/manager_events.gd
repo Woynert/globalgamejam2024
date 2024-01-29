@@ -12,6 +12,8 @@ func event_start_game():
 	SharedRes.get_manager_request().stop()
 	
 	GlobalState.day = 1
+	GlobalState.savings = GlobalState.savings_initial_value
+	
 	SharedRes.get_manager_level().load_level()
 	SharedRes.get_manager_level().timer_start()
 	SharedRes.get_manager_request().start()
@@ -24,13 +26,12 @@ func event_finish_day():
 	SharedRes.get_manager_ui().unload_all()
 	SharedRes.get_manager_request().stop()
 	
-	GlobalState.prev_savings =  GlobalState.savings
-	GlobalState.savings += GlobalState.day_profit
-	
 	for i in range(2):
 		await(get_tree().physics_frame)
+		
+	GlobalState.prev_savings = GlobalState.savings
+	GlobalState.savings += GlobalState.day_profit
 
-	
 	SharedRes.get_manager_level().timer_stop()
 	SharedRes.get_manager_ui().show_menu(ManagerUI.MENU.DAY_RESUME)
 	SharedRes.get_manager_sound().play_stream_loop(ManagerSound.AUDIO.LOOP_CIRCUS_AMBIENT_TIBURONES)
@@ -42,6 +43,7 @@ func event_next_level():
 	
 	GlobalState.day += 1
 	print(GlobalState.day)
+	
 	SharedRes.get_manager_level().load_level()
 	SharedRes.get_manager_level().timer_start()
 	SharedRes.get_manager_request().start()

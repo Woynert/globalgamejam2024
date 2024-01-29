@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6o25wlc2c0p8"]
+[gd_scene load_steps=5 format=3 uid="uid://b6o25wlc2c0p8"]
 
 [ext_resource type="Script" path="res://src/ui/ui_day_resume.gd" id="1_x843y"]
-[ext_resource type="Texture2D" uid="uid://cm2835hxht2j8" path="res://resources/textures/Madera 01.png" id="2_6txuq"]
+[ext_resource type="Texture2D" uid="uid://dv6r7upjiuxkf" path="res://resource_remote/Madera 01.png" id="2_aauxb"]
+[ext_resource type="Texture2D" uid="uid://btwb0m81j2m74" path="res://resource_remote/Tablero Contenidos (Final dia).png" id="3_d0slg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmbw3"]
 bg_color = Color(1, 1, 1, 1)
@@ -21,12 +22,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -150.0
-offset_bottom = 150.0
+offset_top = -4.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6txuq")
-expand_mode = 4
+texture = ExtResource("2_aauxb")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="template" type="Control" parent="."]
@@ -78,11 +79,28 @@ offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect2" type="TextureRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -106.0
+offset_right = 49.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_d0slg")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Control2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 48.0
+offset_right = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
