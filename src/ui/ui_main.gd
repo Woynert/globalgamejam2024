@@ -1,9 +1,9 @@
 extends Control
 
 func _ready():
-	$BtnPlay.pressed.connect(_on_btn_start)
-	$BtnCredits.pressed.connect(_on_btn_credits)
-	$BtnQuit.pressed.connect(_on_btn_quit)
+	$BtnContainer/BtnPlay.pressed.connect(_on_btn_start)
+	$BtnContainer/BtnCredits.pressed.connect(_on_btn_credits)
+	$BtnContainer/BtnQuit.pressed.connect(_on_btn_quit)
 	
 func _on_btn_start():
 	SharedRes.get_manager_events().event_start_game()

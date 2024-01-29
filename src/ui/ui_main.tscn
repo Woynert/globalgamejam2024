@@ -26,16 +26,30 @@ texture = ExtResource("1_wc5og")
 expand_mode = 5
 stretch_mode = 6
 
-[node name="BtnPlay" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 87.0
-offset_top = 178.0
-offset_right = 239.0
-offset_bottom = 235.0
+[node name="BtnContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 799.0
+grow_vertical = 2
+
+[node name="BtnPlay" type="Control" parent="BtnContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -99.0
+offset_right = -93.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("3_jis1s")
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="BtnPlay"]
+[node name="TextureRect" type="TextureRect" parent="BtnContainer/BtnPlay"]
 modulate = Color(1, 0.552941, 1, 1)
 layout_mode = 0
 offset_left = -77.0
@@ -47,7 +61,7 @@ texture = ExtResource("2_sb1qt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="BtnPlay"]
+[node name="Label" type="Label" parent="BtnContainer/BtnPlay"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 7.0
@@ -60,16 +74,23 @@ text = "PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BtnCredits" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 88.0
-offset_top = 273.0
-offset_right = 240.0
-offset_bottom = 330.0
+[node name="BtnCredits" type="Control" parent="BtnContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = 1.0
+offset_right = -90.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("3_jis1s")
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="BtnCredits"]
+[node name="TextureRect" type="TextureRect" parent="BtnContainer/BtnCredits"]
 layout_mode = 0
 offset_left = -77.0
 offset_top = -96.0
@@ -79,7 +100,7 @@ texture = ExtResource("2_sb1qt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="BtnCredits"]
+[node name="Label" type="Label" parent="BtnContainer/BtnCredits"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,16 +114,23 @@ text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BtnQuit" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 88.0
-offset_top = 367.0
-offset_right = 240.0
-offset_bottom = 424.0
+[node name="BtnQuit" type="Control" parent="BtnContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = 100.0
+offset_right = -90.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("3_jis1s")
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="BtnQuit"]
+[node name="TextureRect" type="TextureRect" parent="BtnContainer/BtnQuit"]
 layout_mode = 0
 offset_left = -77.0
 offset_top = -96.0
@@ -112,7 +140,7 @@ texture = ExtResource("2_sb1qt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="BtnQuit"]
+[node name="Label" type="Label" parent="BtnContainer/BtnQuit"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 7.0

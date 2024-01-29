@@ -15,7 +15,7 @@ const OPTION_IMAGE = {
 
 func _ready():
 	$MarginContainer/Button.pressed.connect(_on_return)
-	var option = [OPTION.TRAIN, OPTION.GAMEOVER].pick_random()
+	var option = [OPTION.TRAIN, OPTION.GAMEOVER, OPTION.POLO].pick_random()
 	$TextureRect.texture = load(OPTION_IMAGE[option])
 	
 	match option:

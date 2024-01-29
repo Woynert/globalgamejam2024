@@ -21,17 +21,19 @@ func _physics_process(delta):
 # setters
 
 func set_value_health(value):
-	($Bar/VBoxContainer/Grid/InfoHealth as UiBar).set_value(value)
+	# TODO
+	#($Bar/VBoxContainer/Grid/InfoHealth as UiBar).set_value(value)
+	pass
 
 func set_value_laugh(value):
 	pass # TODO: EMOJIS
 
 func set_value_experience(value):
-	#($LabelExperience as Label).text = str("Exp: %d" % value)
-	($Bar/VBoxContainer/Grid/InfoExp as UiBar).set_value(value)
+	# TODO
+	#($Bar/VBoxContainer/Grid/InfoExp as UiBar).set_value(value)
+	pass
 
 func set_value_money(value):
-	#($LabelMoney as Label).text = str("Money: %d (+%d/sec)" % [value, GlobalState.money_per_second])
 	($Bar/VBoxContainer/Grid/InfoMoney as UiBar).set_value(str("Money: %d (+%d/sec)" % [value, GlobalState.money_per_second]))
 
 func set_current_reequest(request: Array[int]):
