@@ -13,7 +13,6 @@ func _physics_process(delta):
 		
 	elif Input.is_action_just_pressed("debug_2"):
 		SharedRes.get_manager_events().event_finish_day()
-		Input.action_release("debug_2")
 		
 	elif Input.is_action_just_pressed("debug_3"):
 		SharedRes.get_manager_events().event_gameover()
