@@ -10,7 +10,7 @@ func _ready():
 
 func poblate():
 	var children = $pawns.get_children().duplicate()
-	var amount = min(GlobalState.day * 20, children.size())
+	var amount = min(20, children.size())
 	selected = []
 	
 	for i in range(amount):
