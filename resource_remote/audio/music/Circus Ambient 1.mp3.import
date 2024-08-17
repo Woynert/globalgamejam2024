@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7cm0hrscaws8"
+path="res://.godot/imported/Circus Ambient 1.mp3-ee506d3e478f914e9b0c853e2c4658aa.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/music/Circus Ambient 1.mp3"
+dest_files=["res://.godot/imported/Circus Ambient 1.mp3-ee506d3e478f914e9b0c853e2c4658aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brwpnbbn6tpew"
+path="res://.godot/imported/Escena Circus Cuerda.mp3-429f7e09ad15ab85b9f4f6bd5fff9892.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/music/Escena Circus Cuerda.mp3"
+dest_files=["res://.godot/imported/Escena Circus Cuerda.mp3-429f7e09ad15ab85b9f4f6bd5fff9892.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

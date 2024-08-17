@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpp1ms3qyd0a0"
+path="res://.godot/imported/Final Cambio Profesion.mp3-d8f3d6254de8ce62a59582c0c00d5a1a.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/music/Final Cambio Profesion.mp3"
+dest_files=["res://.godot/imported/Final Cambio Profesion.mp3-d8f3d6254de8ce62a59582c0c00d5a1a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
