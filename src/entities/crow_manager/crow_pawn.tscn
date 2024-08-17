@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbly1iqr06enf"]
+[gd_scene load_steps=14 format=3 uid="uid://cbly1iqr06enf"]
 
 [ext_resource type="Script" path="res://src/entities/crow_manager/crow_pawn.gd" id="1_3aud1"]
 [ext_resource type="Texture2D" uid="uid://dpbcitlv7ua5b" path="res://resource_remote/Sombra Idle 03.png" id="2_5jtlr"]
+[ext_resource type="Texture2D" uid="uid://dvapud06hng7f" path="res://resource_remote/Sombra Idle 01 .png" id="2_we2bd"]
+[ext_resource type="Texture2D" uid="uid://btkkasctn3r53" path="res://resource_remote/Sombra One Hand 01.png" id="3_55xr7"]
 [ext_resource type="Texture2D" uid="uid://cvbpqgii6i430" path="res://resource_remote/Sombra One Hand 03.png" id="3_x03mq"]
+[ext_resource type="Texture2D" uid="uid://cxhgq11273c7e" path="res://resource_remote/Sombra Two Hands 01.png" id="4_nqwq8"]
 [ext_resource type="Texture2D" uid="uid://b51ryi5v88sy5" path="res://resource_remote/Sombra Two Hands 03.png" id="4_q2ww8"]
 [ext_resource type="Texture2D" uid="uid://cu5uxcyiobufs" path="res://resource_remote/Sombra Idle 02.png" id="5_61keh"]
 [ext_resource type="Texture2D" uid="uid://buinc0bhaua3u" path="res://resource_remote/Sombra One Hand 02.png" id="6_bqtof"]
@@ -12,7 +15,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5jtlr")
+"texture": ExtResource("2_we2bd")
 }],
 "loop": true,
 "name": &"1",
@@ -20,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_x03mq")
+"texture": ExtResource("3_55xr7")
 }],
 "loop": true,
 "name": &"2",
@@ -28,7 +31,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_q2ww8")
+"texture": ExtResource("4_nqwq8")
 }],
 "loop": true,
 "name": &"3",
@@ -62,6 +65,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_usjel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5jtlr")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x03mq")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q2ww8")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
 [node name="CrowPawn" type="Node3D"]
 script = ExtResource("1_3aud1")
 
@@ -71,7 +101,7 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 [node name="one" type="AnimatedSprite3D" parent="visual"]
 transform = Transform3D(0.568337, 0, 0, 0, 0.568337, 0, 0, 0, 0.568337, 0, 1.06412, 0)
 sprite_frames = SubResource("SpriteFrames_ree76")
-animation = &"3"
+animation = &"2"
 
 [node name="two" type="AnimatedSprite3D" parent="visual"]
 transform = Transform3D(0.568337, 0, 0, 0, 0.568337, 0, 0, 0, 0.568337, 0, 1.06412, 0)
@@ -80,5 +110,5 @@ animation = &"3"
 
 [node name="three" type="AnimatedSprite3D" parent="visual"]
 transform = Transform3D(0.568337, 0, 0, 0, 0.568337, 0, 0, 0, 0.568337, 0, 1.06412, 0)
-sprite_frames = SubResource("SpriteFrames_ree76")
-animation = &"3"
+sprite_frames = SubResource("SpriteFrames_usjel")
+animation = &"1"

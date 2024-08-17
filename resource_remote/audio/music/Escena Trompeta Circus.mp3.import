@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bp41xb28lqvc3"
+path="res://.godot/imported/Escena Trompeta Circus.mp3-c2ae8c3641fd2009f96e183c66b2f4da.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/music/Escena Trompeta Circus.mp3"
+dest_files=["res://.godot/imported/Escena Trompeta Circus.mp3-c2ae8c3641fd2009f96e183c66b2f4da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

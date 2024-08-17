@@ -9,7 +9,7 @@ func move(delta: float, use_gravity: bool = true):
 	if use_gravity:
 		if not node.is_on_floor_shapecast():
 			node.velocity.y -= GRAVITY * delta
-		else:
+		elif node.velocity.y < 0:
 			node.velocity.y = 0
 		if Input.is_action_just_pressed("ui_accept") and node.is_on_floor_shapecast():
 			node.velocity.y = JUMP_VELOCITY

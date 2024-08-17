@@ -5,19 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://b1nft1gmuio3o" path="res://resource_remote/Creditos Cortinas.png" id="2_f38a1"]
 [ext_resource type="Texture2D" uid="uid://hs5yt6uljrpc" path="res://resource_remote/Creditos Cortinas 2.png" id="3_q7wce"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3glf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttgc3"]
 content_margin_left = 10.0
 content_margin_right = 10.0
-bg_color = Color(1, 1, 1, 0)
+bg_color = Color(1, 1, 1, 0.345098)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttgc3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3glf"]
 content_margin_left = 10.0
 content_margin_right = 10.0
-bg_color = Color(1, 1, 1, 0.345098)
+bg_color = Color(1, 1, 1, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -54,29 +54,49 @@ texture = ExtResource("3_q7wce")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlay"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = -104.0
-offset_right = 110.0
-offset_bottom = 190.0
+offset_left = -138.0
+offset_top = -113.0
+offset_right = 138.0
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Laugh Equilibrium
-(GlobalGameJam2024)
+alignment = 1
 
-Whayner Porras (woynert)
-Samual Martinez
-Diego Perez
-Francisco Sanabria
-Alejandro Perez
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlay/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Laugh Equilibrium[/b]
+GlobalGameJam2024
 
-https://github.com/Woynert/globalgamejam2024/"
+"
+fit_content = true
+autowrap_mode = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Overlay/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Made By[/b]
+Alejandro Perez, Diego Silva, Francisco Sanabria, Samual Martinez, Whayner Porras [i][color=gray](Woynert)[/color][/i]
+
+"
+fit_content = true
+autowrap_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Overlay/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Links[/b]
+* [i][color=#2980B9]github.com/Woynert/globalgamejam2024[/color][/i]
+* [i][color=#2980B9]globalgamejam.org/games/2024/laugh-equilibrium-6[/color][/i]"
+fit_content = true
+autowrap_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 visible = false
@@ -101,6 +121,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Button" type="Button" parent="MarginContainer"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_f3glf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ttgc3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3glf")
 text = "Return"

@@ -21,7 +21,7 @@ func _physics_process(delta):
 	
 	if node_rope.enabled:
 		var angle = rad_to_deg(Vector3.UP.angle_to(node_rope.pin_direction)) * sign(node_rope.pin_direction.z)
-		print(angle)
+		# print(angle)
 		widget_monocycle.set_value((angle + node_rope.ANGLE_TO_FAIL) / (node_rope.ANGLE_TO_FAIL * 2)) 
 		widget_monocycle.visible = true
 	else:

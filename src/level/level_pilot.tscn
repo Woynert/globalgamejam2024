@@ -121,7 +121,7 @@ item = 3
 [node name="Node3D" type="Node3D" parent="entities"]
 
 [node name="Elevator" parent="entities" node_paths=PackedStringArray("node_limit") instance=ExtResource("6_5ka5h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00111, 0.0961594, -10.6097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00111, 0.152039, -10.6097)
 node_limit = NodePath("../MarkerElevator")
 
 [node name="MarkerElevator" type="Marker3D" parent="entities"]
@@ -219,7 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78995, -1.77196, 7.06833)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60067, -1.77196, 4.43945)
 
 [node name="CrowPawn7" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75189, -1.77196, -1.14499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83124, -1.77196, 8.82431)
 
 [node name="CrowPawn8" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9424, -1.77196, 0.61193)
@@ -237,7 +237,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18979, -1.77196, 5.89572)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41928, -1.77196, 7.45291)
 
 [node name="CrowPawn17" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78144, -1.77196, 7.26903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83763, -1.77196, 7.27629)
 
 [node name="CrowPawn18" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.42362, -1.77196, 6.97373)
@@ -246,55 +246,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.42362, -1.77196, 6.97373)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88062, -1.77196, 4.21918)
 
 [node name="CrowPawn20" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1932, -1.77196, -0.828281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25197, -1.77196, 9.61087)
 
 [node name="CrowPawn21" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.566309, -1.77196, -9.2017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142706, -1.77196, -9.448)
 
 [node name="CrowPawn29" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19324, -1.77196, -7.79215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21969, -1.77196, -8.60715)
 
 [node name="CrowPawn22" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88685, -1.77196, -11.9156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628271, -1.77196, -8.40126)
 
 [node name="CrowPawn23" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77085, -1.77196, -9.24895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77085, -1.77196, -9.67395)
+
+[node name="CrowPawn36" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404631, -1.77196, -10.2477)
+
+[node name="CrowPawn37" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35469, -1.77196, -8.21139)
+
+[node name="CrowPawn38" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.885877, -1.77196, -8.24675)
 
 [node name="CrowPawn24" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76035, -1.77196, -13.042)
 
 [node name="CrowPawn25" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584198, -1.77196, -13.2351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4402, -1.77196, -8.96289)
 
 [node name="CrowPawn26" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5793, -1.77196, -4.1643)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1235, -1.77196, 9.18174)
 
 [node name="CrowPawn27" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.704, -1.77196, -2.36858)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51202, -1.77196, 5.44582)
 
 [node name="CrowPawn10" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.502, -1.77196, 8.47436)
+
+[node name="CrowPawn34" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438731, -1.77196, 7.93014)
+
+[node name="CrowPawn35" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278689, -1.77196, 9.13648)
 
 [node name="CrowPawn11" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72681, -1.77196, 5.50481)
 
 [node name="CrowPawn12" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2574, -1.77196, -0.105437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.20242, -1.77196, 3.55632)
 
 [node name="CrowPawn28" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7128, -1.77196, 1.21014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63019, -1.77196, 7.12031)
 
 [node name="CrowPawn13" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2258, -1.77196, 0.997066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93046, -1.77196, 8.43874)
 
 [node name="CrowPawn30" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.02982, -1.77196, 2.17073)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91106, -1.77196, 8.20919)
 
 [node name="CrowPawn31" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62937, -1.77196, 3.86958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9037, -1.77196, 7.57941)
 
 [node name="CrowPawn32" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18455, -1.77196, 3.59308)
 
 [node name="CrowPawn33" parent="entities/CrowManager/pawns" instance=ExtResource("12_yhevr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.92097, -1.77196, 3.88362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.97666, -1.77196, 7.07327)

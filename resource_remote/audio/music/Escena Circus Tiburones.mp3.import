@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f7w4jyj7qtwg"
+path="res://.godot/imported/Escena Circus Tiburones.mp3-449c1910f500faebdf539a68be77d2d3.mp3str"
+
+[deps]
+
+source_file="res://resource_remote/audio/music/Escena Circus Tiburones.mp3"
+dest_files=["res://.godot/imported/Escena Circus Tiburones.mp3-449c1910f500faebdf539a68be77d2d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
