@@ -121,7 +121,7 @@ item = 3
 [node name="Node3D" type="Node3D" parent="entities"]
 
 [node name="Elevator" parent="entities" node_paths=PackedStringArray("node_limit") instance=ExtResource("6_5ka5h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00111, 0.0961594, -10.6097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00111, 0.152039, -10.6097)
 node_limit = NodePath("../MarkerElevator")
 
 [node name="MarkerElevator" type="Marker3D" parent="entities"]
