@@ -19,4 +19,6 @@ func _physics_process(delta):
 		
 	elif Input.is_action_just_pressed("debug_4"):
 		SharedRes.get_manager_events().event_win()
-
+	
+	elif Input.is_action_just_pressed("debug_5"):
+		GlobalState.day_profit += 100
